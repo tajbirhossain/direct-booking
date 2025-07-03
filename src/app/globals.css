@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+:root {
+  /* --background: #ffffff; */
+  --background: #f3f3ef;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-helvetica-now: var(--font-helveticaNow);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Menu hover animation */
+.menuButton {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  padding: 0;
+}
+
+.menuButton span {
+  display: block;
+}
+
+.menuButton:after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  content: attr(data-hover);
+  display: inline;
+}
+
+.menuButton:hover span {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.menuButton:hover:after {
+  top: 0;
+  -webkit-transition: top 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: top 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.menuButton:active {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+}
+
+/* Menu hover animation ends */
+
+
+
+
+
+/* Auto scroll cards animation starts */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Auto scroll cards animation ends */
+
+
+
+
+
+
+
+
+
+
+/* glassmorphism card */
+.glassCard {
+  backdrop-filter: blur(8px) saturate(149%) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(149%);
+  background-color: rgba(17, 25, 40, 0.66);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* glassmorphism card ends */
+
+
+
+/* glassmorphism input */
+.glassInput {
+  /* background-color: #282c34; */
+  /* background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%); */
+  backdrop-filter: blur(70px) !important;
+  -webkit-backdrop-filter: blur(70px) !important;
+  box-shadow: 0 7px 20px 5px #00000088;
+}
+
+/* glassmorphism input ends */
+
+
+
+
+/* shiny button effect */
+
+.shine-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0) 20%,
+      rgba(255, 255, 255, 0.12) 50%,
+      rgba(255, 255, 255, 0) 80%);
+  transform: skewX(-20deg);
+  animation: shine 3s ease-in-out infinite;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes shine {
+  0% {
+    left: -150%;
+  }
+
+  50% {
+    left: 50%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+/* shiny button effect ends */
+
+
+
+
+
+
+
+/* big text effect */
+.bigTextHolder img {
+  position: relative;
+  bottom: 0;
+  transition: .5s;
+  transform: rotateY(0deg);
+}
+.bigTextHolder:hover img {
+  transform: rotateY(180deg);
+}
+/* big text effect ends */
