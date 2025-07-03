@@ -12,41 +12,44 @@ import Contact from "@/components/sections/Contact";
 
 const videoUrl = [
   {
-    webm: "/videos/branding-portfolio.webm",
-    mp4: "/videos/branding-portfolio.mp4"
+    // webm: "/videos/branding-portfolio.webm",
+    // mp4: "/videos/branding-portfolio.mp4"
+    mp4: "/videos/design-and-branding.mp4"
   },
   {
-    webm: "/videos/ads-portfolio.webm",
-    mp4: "/videos/ads-portfolio.mp4"
+    // webm: "/videos/ads-portfolio.webm",
+    // mp4: "/videos/ads-portfolio.mp4"
+    mp4: "/videos/marketing.mp4"
   },
   {
-    webm: "/videos/web-portfolio.webm",
-    mp4: "/videos/web-portfolio.mp4"
+    // webm: "/videos/web-portfolio.webm",
+    // mp4: "/videos/web-portfolio.mp4"
+    mp4: "/videos/web-development.mp4"
   },
 ]
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [loaded, setLoaded] = useState(false);
+  // const [isLoading, setIsLoading] = useState(true);
+  const [loaded, setLoaded] = useState(true);
 
   const [videoLoaded, setVideoLoaded] = useState(false)
   const [videoLoaded2, setVideoLoaded2] = useState(false)
   const [videoLoaded3, setVideoLoaded3] = useState(false)
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 9000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 9000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  useEffect(() => {
-    if (!isLoading) {
-      requestAnimationFrame(() => {
-        setLoaded(true);
-      });
-    }
-  }, [isLoading]);
+  // useEffect(() => {
+  //   if (!isLoading) {
+  //     requestAnimationFrame(() => {
+  //       setLoaded(true);
+  //     });
+  //   }
+  // }, [isLoading]);
 
 
 
@@ -102,9 +105,9 @@ export default function Home() {
   };
 
 
-  if (isLoading) {
-    return <Preload />;
-  }
+  // if (isLoading) {
+  //   return <Preload />;
+  // }
 
 
   return (
