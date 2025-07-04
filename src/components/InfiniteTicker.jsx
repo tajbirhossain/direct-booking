@@ -3,17 +3,21 @@ import { useMemo } from "react";
 export default function InfiniteTicker() {
   const items = useMemo(
     () => [
-      "FINTECH",
-      "FOODTECH",
       "RETAIL",
-      "CONSTRUCTION BUSINESS",
-      "STARTUP",
-      "DIGITAL AGENCY",
-      "SAAS",
-      "MEDIA STUDIO",
-      "ENTERPRISE",
-      "EDTECH",
-      "CORPORATE",
+      "START UP",
+      "DIGITAL",
+      "VILLAS",
+      "CABINS",
+      "COTTAGES",
+      "APARTMENTS & CONDOS",
+      "BEACH HOUSES",
+      "TREEHOUSES",
+      "HOUSEBOATS",
+      "MANSIONS",
+      "CHALETS",
+      "HOSTELS",
+      "SHARED APARTMENTS"
+
     ],
     []
   );

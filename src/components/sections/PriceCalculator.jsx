@@ -277,14 +277,21 @@ const PriceCalculator = () => {
                         <div className="w-full max-w-[1100px] mx-auto py-10 px-6 flex flex-col gap-y-[3.75em]">
                             <h3 className='text-5xl font-black'>DIRECT BOOKINGS TEAM HAS BEEN IN THE GAME FOR 8 STRAIGHT YEARS</h3>
                             <div className="flex items-center justify-center flex-wrap gap-y-[2em] gap-x-[7em]">
-                                <img src="images/logos/logo01.webp" loading="lazy" width="51.5" alt="" className='invert' />
+                                {/* <img src="images/logos/logo01.webp" loading="lazy" width="51.5" alt="" className='invert' />
                                 <img src="images/logos/logo02.webp" loading="lazy" alt="" width="77.5" className='invert' />
                                 <img src="images/logos/logo03.webp" loading="lazy" alt="" width="69.5" className='invert' />
                                 <img src="images/logos/logo04.webp" loading="lazy" alt="" width="124.5" className='invert' />
                                 <img src="images/logos/logo05.webp" loading="lazy" alt="" width="180.5" className='invert' />
                                 <img src="images/logos/logo06.webp" loading="lazy" alt="" width="143" className='invert' />
                                 <img src="images/logos/logo07.webp" loading="lazy" alt="" width="109.5" className='invert' />
-                                <img src="images/logos/logo08.webp" loading="lazy" alt="" width="111" className='invert' />
+                                <img src="images/logos/logo08.webp" loading="lazy" alt="" width="111" className='invert' /> */}
+                                <img src="images/logos/1.png" loading="lazy" width="100" alt="" />
+                                <img src="images/logos/2.png" loading="lazy" width="75" alt="" />
+                                <img src="images/logos/3.png" loading="lazy" width="140" alt="" />
+                                <img src="images/logos/4.png" loading="lazy" width="140" alt="" className='invert' />
+                                <img src="images/logos/5-1.png" loading="lazy" width="130" alt="" />
+                                <img src="images/logos/6.png" loading="lazy" width="100" alt="" />
+                                <img src="images/logos/7.png" loading="lazy" width="100" alt="" />
                             </div>
                         </div>
                         <div className="w-full h-[60px] absolute bottom-0 left-0 border-t-[1px] border-t-black">
