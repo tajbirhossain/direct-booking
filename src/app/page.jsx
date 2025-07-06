@@ -13,17 +13,17 @@ import Contact from "@/components/sections/Contact";
 const videoUrl = [
   {
     // webm: "/videos/branding-portfolio.webm",
-    // mp4: "/videos/branding-portfolio.mp4"
+    // mp4: "/videos/branding-portfolio.mp4",
     mp4: "/videos/design-and-branding.mp4"
   },
   {
     // webm: "/videos/ads-portfolio.webm",
-    // mp4: "/videos/ads-portfolio.mp4"
+    // mp4: "/videos/ads-portfolio.mp4",
     mp4: "/videos/marketing.mp4"
   },
   {
     // webm: "/videos/web-portfolio.webm",
-    // mp4: "/videos/web-portfolio.mp4"
+    // mp4: "/videos/web-portfolio.mp4",
     mp4: "/videos/web-development.mp4"
   },
 ]

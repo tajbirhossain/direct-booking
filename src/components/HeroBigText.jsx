@@ -60,6 +60,20 @@ const HeroBigText = () => {
 
             </div> */}
             <div className="w-full h-6 absolute bottom-0 left-0 backdrop-blur-md bg-[rgba(255,255,255,0.2)] z-[1]" />
+            <div className="w-full flex items-center justify-between mb-3">
+                <div className='flex items-center gap-28 font-medium'>
+                    <p>MON 04:21:30</p>
+                    <p>DRESDEN, GERMANY</p>
+                </div>
+                <div className='flex items-center gap-28 font-medium'>
+                    <p>COMMUNICATION AGENCY</p>
+                </div>
+                <div className='flex items-center gap-28 font-medium'>
+                    <p>BEHANCE</p>
+                    <p>INSTAGRAM</p>
+                    <p>FACEBOOK</p>
+                </div>
+            </div>
             <div className="w-full row-[3/-1] flex justify-between relative">
                 <div
                     ref={barRef}
@@ -113,7 +127,8 @@ const HeroBigText = () => {
                     <img src="/images/letters-medium/G.svg" alt="" className="h-full" />
                 </div>
                 <div ref={addToRefs} className="bigTextHolder h-[calc(100vw/11.5)]" onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-                    <img src="/images/letters-medium/S.svg" alt="" className="h-full" />
+                    {/* <img src="/images/letters-medium/S.svg" alt="" className="h-full" /> */}
+                    <img src="/images/letters-medium/Z.svg" alt="" className="h-full" />
                 </div>
             </div>
             {/* <div className="w-full flex justify-between items-center">

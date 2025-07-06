@@ -248,10 +248,10 @@ const PriceCalculator = () => {
                                 </div>
 
                                 <div className="mb-4">
-                                    <h4 className="text-3xl text-white mb-2">Your Occupancy Rate is above the industry average</h4>
+                                    <h4 className="text-3xl text-white mb-2">Your Occupancy Rate is {occupancy < 60 ? "below" : "above"} the industry average</h4>
                                     <p className="text-white">
-                                        By increasing your occupancy by just 10% annually with Boostly helping, you will lead to{' '}
-                                        <span className="text-blue-500">${extraRevenue.toLocaleString()} in extra revenue</span> by year three.
+                                        By increasing your occupancy by just 20% annually with Direct Bookingz, you will lead to{' '}
+                                        <span className="text-blue-500">${extraRevenue.toLocaleString()} in extra revenue</span>.
                                     </p>
                                 </div>
 
@@ -259,7 +259,7 @@ const PriceCalculator = () => {
                                     <h4 className="text-3xl text-white mb-2">Your OTA Bookings are {ota < 80 ? 'below' : 'above'} the industry average</h4>
                                     <p className="text-white">
                                         By increasing your direct bookings by just 10% annually, you could save{' '}
-                                        <span className="text-blue-500">${saveFee.toLocaleString()} in OTA fees</span> by the end of year three.
+                                        <span className="text-blue-500">${saveFee.toLocaleString()} in OTA fees</span>.
                                     </p>
                                 </div>
                             </div>
@@ -275,7 +275,7 @@ const PriceCalculator = () => {
                             <InfiniteTicker />
                         </div>
                         <div className="w-full max-w-[1100px] mx-auto py-10 px-6 flex flex-col gap-y-[3.75em]">
-                            <h3 className='text-5xl font-black'>DIRECT BOOKINGS TEAM HAS BEEN IN THE GAME FOR 8 STRAIGHT YEARS</h3>
+                            <h3 className='text-5xl font-black'>DIRECT BOOKINGZ TEAM HAS BEEN IN THE GAME FOR 5 STRAIGHT YEARS</h3>
                             <div className="flex items-center justify-center flex-wrap gap-y-[2em] gap-x-[7em]">
                                 {/* <img src="images/logos/logo01.webp" loading="lazy" width="51.5" alt="" className='invert' />
                                 <img src="images/logos/logo02.webp" loading="lazy" alt="" width="77.5" className='invert' />
