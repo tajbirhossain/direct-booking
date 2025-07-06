@@ -275,7 +275,7 @@ const PriceCalculator = () => {
                             <InfiniteTicker />
                         </div>
                         <div className="w-full max-w-[1100px] mx-auto py-10 px-6 flex flex-col gap-y-[3.75em]">
-                            <h3 className='text-5xl font-black'>DIRECT BOOKINGZ TEAM HAS BEEN IN THE GAME FOR 5 STRAIGHT YEARS</h3>
+                            <h3 className='text-4xl font-black'>DIRECT BOOKINGZ TEAM HAS BEEN IN THE GAME FOR 5 STRAIGHT YEARS</h3>
                             <div className="flex items-center justify-center flex-wrap gap-y-[1.5em] gap-x-[5em]">
                                 {/* <img src="images/logos/logo01.webp" loading="lazy" width="51.5" alt="" className='invert' />
                                 <img src="images/logos/logo02.webp" loading="lazy" alt="" width="77.5" className='invert' />
