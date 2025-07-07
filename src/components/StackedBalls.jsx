@@ -9,27 +9,44 @@ const StackedBalls = () => {
     const ballsRef = useRef([]);
     const ballsCreatedRef = useRef(false);
 
+    // const skillsData = [
+    //     { text: 'NODE.JS,\nEXPRESS.JS,\nDJANGO', color: '#fb64b6', size: 'large' },
+    //     { text: 'MYSQL,\nFIREBASE', color: '#fb64b6', size: 'medium' },
+    //     { text: 'ANGULAR,\nLARAVEL', color: '#fb64b6', size: 'medium' },
+    //     { text: 'REACT,\nVUE.JS,\nNEXT.JS', color: '#fb64b6', size: 'large' },
+    //     { text: 'WORDPRESS,\nELEMENTOR,\nHEADLESS CMS', color: '#fb64b6', size: 'large' },
+    //     { text: 'VANILLA JS,\nTYPESCRIPT', color: '#fb64b6', size: 'medium' },
+    //     { text: 'THREE.JS,\nANIME.JS,\nGSAP', color: '#fb64b6', size: 'large' },
+    //     { text: 'C#', color: '#fb64b6', size: 'small' },
+    //     { text: 'WEBFLOW', color: '#fb64b6', size: 'medium' },
+    //     { text: 'FRAMER,\nTILDA,\nREADYMAG,\nWIX STUDIO', color: '#fb64b6', size: 'large' },
+    //     { text: 'RESEARCH &\nANALYTICS', color: '#FFC107', size: 'large' },
+    //     { text: 'STRATEGY', color: '#FFC107', size: 'large' },
+    //     { text: 'AI', color: '#FFC107', size: 'small' },
+    //     { text: 'BRAND\nIDENTITY', color: '#FFC107', size: 'medium' },
+    //     { text: 'TRENDS', color: '#FFC107', size: 'medium' },
+    //     { text: 'FEATURE\nINSIGHTS', color: '#FFC107', size: 'large' },
+    //     { text: 'ART DIRECTION', color: '#FFC107', size: 'large' },
+    //     { text: '3D', color: '#FFC107', size: 'small' },
+    //     { text: 'TESTING', color: '#FFC107', size: 'medium' }
+    // ];
     const skillsData = [
-        { text: 'NODE.JS,\nEXPRESS.JS,\nDJANGO', color: '#fb64b6', size: 'large' },
-        { text: 'MYSQL,\nFIREBASE', color: '#fb64b6', size: 'medium' },
-        { text: 'ANGULAR,\nLARAVEL', color: '#fb64b6', size: 'medium' },
-        { text: 'REACT,\nVUE.JS,\nNEXT.JS', color: '#fb64b6', size: 'large' },
-        { text: 'WORDPRESS,\nELEMENTOR,\nHEADLESS CMS', color: '#fb64b6', size: 'large' },
-        { text: 'VANILLA JS,\nTYPESCRIPT', color: '#fb64b6', size: 'medium' },
-        { text: 'THREE.JS,\nANIME.JS,\nGSAP', color: '#fb64b6', size: 'large' },
-        { text: 'C#', color: '#fb64b6', size: 'small' },
-        { text: 'WEBFLOW', color: '#fb64b6', size: 'medium' },
-        { text: 'FRAMER,\nTILDA,\nREADYMAG,\nWIX STUDIO', color: '#fb64b6', size: 'large' },
-        { text: 'RESEARCH &\nANALYTICS', color: '#FFC107', size: 'large' },
-        { text: 'STRATEGY', color: '#FFC107', size: 'large' },
-        { text: 'AI', color: '#FFC107', size: 'small' },
-        { text: 'BRAND\nIDENTITY', color: '#FFC107', size: 'medium' },
-        { text: 'TRENDS', color: '#FFC107', size: 'medium' },
-        { text: 'FEATURE\nINSIGHTS', color: '#FFC107', size: 'large' },
-        { text: 'ART DIRECTION', color: '#FFC107', size: 'large' },
-        { text: '3D', color: '#FFC107', size: 'small' },
-        { text: 'TESTING', color: '#FFC107', size: 'medium' }
+        { text: 'DIGITAL BRAND\nPRESENCE', color: '#FFC107', size: 'large' },
+        { text: 'MARKET &\nCOMPETITOR\nANALYSIS', color: '#FFC107', size: 'large' },
+        { text: 'BRAND\nSTORYTELLING', color: '#FFC107', size: 'medium' },
+        { text: 'SEO', color: '#fb64b6', size: 'medium' },
+        { text: 'PPC', color: '#fb64b6', size: 'small' },
+        { text: 'GOOGLE\nADS', color: '#fb64b6', size: 'medium' },
+        { text: 'SOCIAL MEDIA\nMARKETING', color: '#FFC107', size: 'large' },
+        { text: 'CONTENT\nCREATION', color: '#FFC107', size: 'medium' },
+        { text: 'REMARKETING\nCAMPAIGN', color: '#fb64b6', size: 'medium' },
+        { text: 'GOOGLE\nRANKING', color: '#fb64b6', size: 'medium' },
+        { text: 'INFLUENCER\nMARKETING', color: '#FFC107', size: 'large' },
+        { text: 'MOBILE APP\nDEVELOPMENT', color: '#fb64b6', size: 'large' },
+        { text: 'BOOKING &\nRESERVATION\nINTEGRATION', color: '#fb64b6', size: 'large' }
     ];
+
+
 
     const getSizeRadius = (size) => {
         switch (size) {
@@ -48,7 +65,7 @@ const StackedBalls = () => {
             if (!canvasRef.current || !containerRef.current) return;
             const canvas = canvasRef.current;
             const container = containerRef.current.parentElement;
-            
+
             const getActualDimensions = () => {
                 const computedStyle = window.getComputedStyle(container);
                 const width = parseFloat(computedStyle.width);
@@ -57,7 +74,7 @@ const StackedBalls = () => {
             };
 
             const { width, height } = getActualDimensions();
-            
+
             canvas.width = width;
             canvas.height = height;
             canvas.style.width = width + 'px';
@@ -96,7 +113,7 @@ const StackedBalls = () => {
                     const lines = b.text.split('\n');
                     const lh = Math.max(12, r * 0.22);
                     const start = -(lines.length - 1) * lh / 2;
-                    lines.forEach((l,i) => ctx.fillText(l, 0, start + i * lh));
+                    lines.forEach((l, i) => ctx.fillText(l, 0, start + i * lh));
                     ctx.restore();
                 });
             });
@@ -116,7 +133,7 @@ const StackedBalls = () => {
                 });
                 ballsCreatedRef.current = true;
                 ballsRef.current = balls;
-                World.add(engine.world, balls.map(b=>b.body));
+                World.add(engine.world, balls.map(b => b.body));
             };
 
             const observer = new IntersectionObserver(entries => {
@@ -147,13 +164,13 @@ const StackedBalls = () => {
                 const computedStyle = window.getComputedStyle(container);
                 const width = parseFloat(computedStyle.width);
                 const height = parseFloat(computedStyle.height);
-                
+
                 const canvas = renderRef.current.canvas;
                 canvas.width = width;
                 canvas.height = height;
                 canvas.style.width = width + 'px';
                 canvas.style.height = height + 'px';
-                
+
                 renderRef.current.options.width = width;
                 renderRef.current.options.height = height;
             }
