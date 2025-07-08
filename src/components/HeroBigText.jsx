@@ -1,8 +1,55 @@
-import React, { useRef } from 'react'
+'use client'
+import React, { useEffect, useRef, useState } from 'react'
 
 const HeroBigText = () => {
     const textRef = useRef([])
     const barRef = useRef(null);
+
+
+    const [time, setTime] = useState('');
+    const [location, setLocation] = useState('');
+    const [timezone, setTimezone] = useState('');
+
+    useEffect(() => {
+        const fetchLocation = async () => {
+            try {
+                const res = await fetch('https://ipwho.is/');
+                const data = await res.json();
+                if (data.success) {
+                    setLocation(`${data.city}, ${data.country}`);
+                    setTimezone(data.timezone.id);
+                } else {
+                    console.error('IP lookup failed');
+                }
+            } catch (err) {
+                console.error('Failed to fetch location:', err);
+            }
+        };
+
+        fetchLocation();
+    }, []);
+
+    useEffect(() => {
+        if (!timezone) return;
+
+        const updateClock = () => {
+            const now = new Date();
+            const options = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                weekday: 'short',
+                timeZone: timezone,
+                hour12: false,
+            };
+            const formattedTime = new Intl.DateTimeFormat('en-US', options).format(now);
+            setTime(formattedTime.toUpperCase());
+        };
+
+        updateClock();
+        const interval = setInterval(updateClock, 1000);
+        return () => clearInterval(interval);
+    }, [timezone]);
 
 
     const handleHover = (e) => {
@@ -62,16 +109,16 @@ const HeroBigText = () => {
             <div className="w-full h-6 absolute bottom-0 left-0 backdrop-blur-md bg-[rgba(255,255,255,0.2)] z-[1]" />
             <div className="w-full flex items-center justify-between mb-3">
                 <div className='flex items-center gap-28 font-medium'>
-                    <p>MON 04:21:30</p>
-                    <p>DRESDEN, GERMANY</p>
+                    <p className='w-[135px]'>{time || 'Loading time...'}</p>
+                    <p className='w-[250px]'>{location || 'Loading location...'}</p>
                 </div>
                 <div className='flex items-center gap-28 font-medium'>
                     <p>COMMUNICATION AGENCY</p>
                 </div>
                 <div className='flex items-center gap-28 font-medium'>
-                    <p>BEHANCE</p>
-                    <p>INSTAGRAM</p>
-                    <p>FACEBOOK</p>
+                    <p><a href='https://behance.net'>BEHANCE</a></p>
+                    <p><a href='https://instagram.com'>INSTAGRAM</a></p>
+                    <p><a href='https://facebook.com'>FACEBOOK</a></p>
                 </div>
             </div>
             <div className="w-full row-[3/-1] flex justify-between relative">

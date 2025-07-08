@@ -9,32 +9,11 @@ const StackedBalls = () => {
     const ballsRef = useRef([]);
     const ballsCreatedRef = useRef(false);
 
-    // const skillsData = [
-    //     { text: 'NODE.JS,\nEXPRESS.JS,\nDJANGO', color: '#fb64b6', size: 'large' },
-    //     { text: 'MYSQL,\nFIREBASE', color: '#fb64b6', size: 'medium' },
-    //     { text: 'ANGULAR,\nLARAVEL', color: '#fb64b6', size: 'medium' },
-    //     { text: 'REACT,\nVUE.JS,\nNEXT.JS', color: '#fb64b6', size: 'large' },
-    //     { text: 'WORDPRESS,\nELEMENTOR,\nHEADLESS CMS', color: '#fb64b6', size: 'large' },
-    //     { text: 'VANILLA JS,\nTYPESCRIPT', color: '#fb64b6', size: 'medium' },
-    //     { text: 'THREE.JS,\nANIME.JS,\nGSAP', color: '#fb64b6', size: 'large' },
-    //     { text: 'C#', color: '#fb64b6', size: 'small' },
-    //     { text: 'WEBFLOW', color: '#fb64b6', size: 'medium' },
-    //     { text: 'FRAMER,\nTILDA,\nREADYMAG,\nWIX STUDIO', color: '#fb64b6', size: 'large' },
-    //     { text: 'RESEARCH &\nANALYTICS', color: '#FFC107', size: 'large' },
-    //     { text: 'STRATEGY', color: '#FFC107', size: 'large' },
-    //     { text: 'AI', color: '#FFC107', size: 'small' },
-    //     { text: 'BRAND\nIDENTITY', color: '#FFC107', size: 'medium' },
-    //     { text: 'TRENDS', color: '#FFC107', size: 'medium' },
-    //     { text: 'FEATURE\nINSIGHTS', color: '#FFC107', size: 'large' },
-    //     { text: 'ART DIRECTION', color: '#FFC107', size: 'large' },
-    //     { text: '3D', color: '#FFC107', size: 'small' },
-    //     { text: 'TESTING', color: '#FFC107', size: 'medium' }
-    // ];
     const skillsData = [
         { text: 'DIGITAL BRAND\nPRESENCE', color: '#FFC107', size: 'large' },
         { text: 'MARKET &\nCOMPETITOR\nANALYSIS', color: '#FFC107', size: 'large' },
         { text: 'BRAND\nSTORYTELLING', color: '#FFC107', size: 'medium' },
-        { text: 'SEO', color: '#fb64b6', size: 'medium' },
+        { text: 'SEO', color: '#fb64b6', size: 'small' },
         { text: 'PPC', color: '#fb64b6', size: 'small' },
         { text: 'GOOGLE\nADS', color: '#fb64b6', size: 'medium' },
         { text: 'SOCIAL MEDIA\nMARKETING', color: '#FFC107', size: 'large' },
@@ -43,10 +22,9 @@ const StackedBalls = () => {
         { text: 'GOOGLE\nRANKING', color: '#fb64b6', size: 'medium' },
         { text: 'INFLUENCER\nMARKETING', color: '#FFC107', size: 'large' },
         { text: 'MOBILE APP\nDEVELOPMENT', color: '#fb64b6', size: 'large' },
-        { text: 'BOOKING &\nRESERVATION\nINTEGRATION', color: '#fb64b6', size: 'large' }
+        { text: 'BOOKING &\nRESERVATION\nINTEGRATION', color: '#fb64b6', size: 'large' },
+        { text: 'Email Marketing', color: '#FFC107', size: 'large' }
     ];
-
-
 
     const getSizeRadius = (size) => {
         switch (size) {
@@ -109,9 +87,15 @@ const StackedBalls = () => {
                     const r = b.body.circleRadius;
                     ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(b.body.angle);
                     ctx.beginPath(); ctx.arc(0, 0, r, 0, 2 * Math.PI); ctx.fillStyle = b.color; ctx.fill();
-                    ctx.fillStyle = '#fff'; ctx.font = `bold ${Math.max(10, r * 0.22)}px Arial`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+                    ctx.fillStyle = '#fff';
+
+                    // Improved font size calculation - bigger minimum for small balls
+                    const fontSize = r <= 55 ? Math.max(16, r * 0.3) : Math.max(10, r * 0.22);
+                    ctx.font = `bold ${fontSize}px Arial`;
+                    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+
                     const lines = b.text.split('\n');
-                    const lh = Math.max(12, r * 0.22);
+                    const lh = Math.max(12, fontSize * 1.1);
                     const start = -(lines.length - 1) * lh / 2;
                     lines.forEach((l, i) => ctx.fillText(l, 0, start + i * lh));
                     ctx.restore();
