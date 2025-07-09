@@ -4,7 +4,7 @@ const LanguageSwitcher = () => {
     const [selected, setSelected] = useState('English');
     const [isOpen, setIsOpen] = useState(false);
 
-    const languages = ['English', 'German', 'Spanish', 'Dutch'];
+    const languages = ['English', 'German', 'Spanish', 'Italian'];
 
     return (
         <div className="relative w-[120px]">
