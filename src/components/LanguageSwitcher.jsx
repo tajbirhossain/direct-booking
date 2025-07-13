@@ -7,12 +7,12 @@ const LanguageSwitcher = () => {
     const languages = ['English', 'German', 'Spanish', 'Italian'];
 
     return (
-        <div className="relative w-[120px]">
+        <div className="relative w-[120px] max-[700px]:w-[100px]">
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="h-10 w-full rounded-lg pl-2 pr-4 border border-gray-500 bg-[#ff00] text-left cursor-pointer focus:outline-none flex items-center"
+                className="h-10 w-full rounded-lg pl-2 pr-4 border border-gray-500 bg-[#ff00] text-left cursor-pointer focus:outline-none flex items-center max-[700px]:h-8 max-[700px]:rounded-md max-[700px]:pl-1 max-[700px]:pr-2 max-[700px]:text-sm"
             >
-                <img src="/images/icons/globe.png" alt="" className='w-4 mr-2' />
+                <img src="/images/icons/globe.png" alt="" className='w-4 mr-2 max-[700px]:w-3 max-[700px]:mr-1.5' />
                 {selected}
             </button>
 
@@ -28,7 +28,8 @@ const LanguageSwitcher = () => {
                             className={`px-4 py-3 cursor-pointer transition-colors ${lang === selected
                                 ? 'bg-gray-300'
                                 : 'hover:bg-gray-200'
-                                }`}
+                                }
+                                max-[700px]:px-3 max-[700px]:py-2 max-[700px]:text-sm`}
                         >
                             {lang}
                         </li>

@@ -29,27 +29,27 @@ const videoUrl = [
 ]
 
 export default function Home() {
-  // const [isLoading, setIsLoading] = useState(true);
-  const [loaded, setLoaded] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loaded, setLoaded] = useState(false);
 
   const [videoLoaded, setVideoLoaded] = useState(false)
   const [videoLoaded2, setVideoLoaded2] = useState(false)
   const [videoLoaded3, setVideoLoaded3] = useState(false)
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 9000);
-  //   return () => clearTimeout(timer);
-  // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 9000);
+    return () => clearTimeout(timer);
+  }, []);
 
-  // useEffect(() => {
-  //   if (!isLoading) {
-  //     requestAnimationFrame(() => {
-  //       setLoaded(true);
-  //     });
-  //   }
-  // }, [isLoading]);
+  useEffect(() => {
+    if (!isLoading) {
+      requestAnimationFrame(() => {
+        setLoaded(true);
+      });
+    }
+  }, [isLoading]);
 
 
 
@@ -105,9 +105,9 @@ export default function Home() {
   };
 
 
-  // if (isLoading) {
-  //   return <Preload />;
-  // }
+  if (isLoading) {
+    return <Preload />;
+  }
 
 
   return (
@@ -120,44 +120,47 @@ export default function Home() {
     >
       <Header />
       <main>
-        <section className="grid grid-rows-[0.5fr_0.5fr_1fr] min-h-screen max-h-screen">
+        <section id="hero" className="grid grid-rows-[0.5fr_0.5fr_1fr] min-h-screen max-h-screen max-[650px]:grid-rows-[0.5fr_1.5fr] relative overflow-hidden">
           <div className="p-6 row-[2/3]">
-            <h2 className="text-5xl font-bold text-center uppercase leading-[1.2]">
+            <h2 className="text-5xl font-bold text-center uppercase leading-[1.2] max-[1800px]:text-4xl max-[1350px]:text-3xl max-[900px]:text-2xl max-[650px]:text-3xl max-[650px]:text-start max-[450px]:text-2xl">
               Stop paying fees. Start owning your bookings.
               <br />
               <span
                 onMouseEnter={() => handleMouseEnter(1)}
                 onMouseLeave={() => handleMouseLeave(1)}
-                className={`relative cursor-pointer duration-300 z-10 hover:z-50
+                className={`relative whitespace-nowrap cursor-pointer duration-300 z-10 hover:z-50
                             before:w-full before:h-[4px] before:bg-black before:absolute
                             before:content-[''] before:bottom-[-2px] before:left-0 before:delay-200 before:duration-300 hover:before:w-[0%]
                             after:w-[calc(100%+40px)] after:h-[calc(100%+30px)] after:rounded-lg after:bg-yellow-300 after:absolute
                             after:content-[''] after:top-1/2 after:left-1/2 after:-translate-y-1/2 after:-translate-x-1/2 after:-z-[1]
-                            after:opacity-0 after:delay-200 after:duration-300 after:scale-75 hover:after:opacity-100 hover:after:scale-100`}
+                            after:opacity-0 after:delay-200 after:duration-300 after:scale-75 hover:after:opacity-100 hover:after:scale-100
+                            max-[900px]:before:h-[3px]`}
               >
                 DESIGN AND BRANDING,
               </span>{" "}
               <span
                 onMouseEnter={() => handleMouseEnter(2)}
                 onMouseLeave={() => handleMouseLeave(2)}
-                className={`relative cursor-pointer duration-300 z-10 hover:z-50 
+                className={`relative whitespace-nowrap cursor-pointer duration-300 z-10 hover:z-50 
                             before:w-full before:h-[4px] before:bg-black before:absolute
                             before:content-[''] before:bottom-[-2px] before:left-0 before:delay-200 before:duration-300 hover:before:w-[0%]
                             after:w-[calc(100%+40px)] after:h-[calc(100%+30px)] after:rounded-lg after:bg-orange-500 after:absolute
                             after:content-[''] after:top-1/2 after:left-1/2 after:-translate-y-1/2 after:-translate-x-1/2 after:-z-[1]
-                            after:opacity-0 after:delay-200 after:duration-300 after:scale-75 hover:after:opacity-100 hover:after:scale-100`}
+                            after:opacity-0 after:delay-200 after:duration-300 after:scale-75 hover:after:opacity-100 hover:after:scale-100
+                            max-[900px]:before:h-[3px]`}
               >
                 ADVERTISING,
               </span>{" "}
               <span
                 onMouseEnter={() => handleMouseEnter(3)}
                 onMouseLeave={() => handleMouseLeave(3)}
-                className={`relative cursor-pointer duration-300 z-10 hover:z-50 
+                className={`relative whitespace-nowrap cursor-pointer duration-300 z-10 hover:z-50 
                             before:w-full before:h-[4px] before:bg-black before:absolute
                             before:content-[''] before:bottom-[-2px] before:left-0 before:delay-200 before:duration-300 hover:before:w-[0%]
                             after:w-[calc(100%+40px)] after:h-[calc(100%+30px)] after:rounded-lg after:bg-blue-500 after:absolute
                             after:content-[''] after:top-1/2 after:left-1/2 after:-translate-y-1/2 after:-translate-x-1/2 after:-z-[1]
-                            after:opacity-0 after:delay-200 after:duration-300 after:scale-75 hover:after:opacity-100 hover:after:scale-100`}
+                            after:opacity-0 after:delay-200 after:duration-300 after:scale-75 hover:after:opacity-100 hover:after:scale-100
+                            max-[900px]:before:h-[3px]`}
               >
                 WEB DEVELOPMENT
               </span> AND putting

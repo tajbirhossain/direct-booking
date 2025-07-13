@@ -1,6 +1,7 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 const StackedBalls = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
     const engineRef = useRef(null);
@@ -8,6 +9,16 @@ const StackedBalls = () => {
     const runnerRef = useRef(null);
     const ballsRef = useRef([]);
     const ballsCreatedRef = useRef(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const skillsData = [
         { text: 'DIGITAL BRAND\nPRESENCE', color: '#FFC107', size: 'large' },
@@ -28,10 +39,10 @@ const StackedBalls = () => {
 
     const getSizeRadius = (size) => {
         switch (size) {
-            case 'small': return 55;
-            case 'medium': return 75;
-            case 'large': return 95;
-            default: return 65;
+            case 'small': return windowWidth > 1200 ? 55 : windowWidth > 900 ? 40 : 25;
+            case 'medium': return windowWidth > 1200 ? 75 : windowWidth > 900 ? 60 : 45;
+            case 'large': return windowWidth > 1200 ? 95 : windowWidth > 900 ? 80 : 60;
+            default: return windowWidth > 1200 ? 65 : windowWidth > 900 ? 50 : 35;
         }
     };
 
@@ -90,7 +101,17 @@ const StackedBalls = () => {
                     ctx.fillStyle = '#fff';
 
                     // Improved font size calculation - bigger minimum for small balls
-                    const fontSize = r <= 55 ? Math.max(16, r * 0.3) : Math.max(10, r * 0.22);
+                    // const fontSize = r <= 55 ? Math.max(16, r * 0.3) : Math.max(10, r * 0.22);
+                    const baseFontSize = r <= 55 ? r * 0.3 : r * 0.22;
+                    let fontSize;
+                    if (window.innerWidth <= 600) {
+                        fontSize = baseFontSize * 0.6;
+                    } else if (window.innerWidth <= 900) {
+                        fontSize = baseFontSize * 0.8;
+                    } else {
+                        fontSize = baseFontSize;
+                    }
+                    fontSize = Math.max(8, fontSize);
                     ctx.font = `bold ${fontSize}px Arial`;
                     ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
 
@@ -165,7 +186,7 @@ const StackedBalls = () => {
 
     return (
         <div ref={containerRef} className="absolute inset-0 pointer-events-none">
-            <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full pointer-events-auto" style={{ width: '100%', height: '100%' }} />
+            <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full pointer-events-auto" />
         </div>
     );
 };

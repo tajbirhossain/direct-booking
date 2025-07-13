@@ -28,7 +28,7 @@ export default function InfiniteTicker() {
     <div className="w-full h-full overflow-hidden whitespace-nowrap flex items-center">
       <div className="inline-flex animate-scroll">
         {scrollingItems.map((label, i) => (
-          <span key={i} className="mx-10 text-xl">
+          <span key={i} className="mx-10 text-xl max-[1150px]:text-base">
             {label}
           </span>
         ))}

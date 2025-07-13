@@ -19,6 +19,7 @@
   }
 } */
 
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -196,7 +197,9 @@ body {
   transition: .5s;
   transform: rotateY(0deg);
 }
+
 .bigTextHolder:hover img {
   transform: rotateY(180deg);
 }
+
 /* big text effect ends */

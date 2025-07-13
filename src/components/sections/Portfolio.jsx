@@ -463,31 +463,31 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="portfolio h-screen relative bg-[#f3f3ef] text-[#060606] overflow-hidden">
+    <section id='portfolio' ref={sectionRef} className="portfolio h-screen relative bg-[#f3f3ef] text-[#060606] overflow-hidden">
       <div ref={welcomeRef} className="portfolio-welcome absolute inset-0 flex items-center justify-center z-10">
         <div className="portfolio-welcome-content text-center relative overflow-hidden">
           <div className="heading-label text-sm font-medium mb-2">BEST OF</div>
-          <h1 className="text-[5em] font-black leading-[1] -tracking-[1.5px]">OUR WORKS</h1>
+          <h1 className="text-[5em] font-black leading-[1] -tracking-[1.5px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">OUR WORKS</h1>
           <div ref={wallRef} className="welcome-wall absolute inset-0 bg-[#f3f3ef]"></div>
         </div>
       </div>
 
-      <div className="portfolio-slider-layout absolute inset-0 grid grid-cols-[1fr_1fr_1fr] z-20">
-        <div className="portfolio-work-tag overflow-hidden flex flex-col justify-center">
+      <div className="portfolio-slider-layout absolute inset-0 grid grid-cols-[1fr_1fr_1fr] z-20 max-[550px]:grid-cols-[1fr] max-[550px]:grid-rows-[1fr_1fr_1fr] max-[550px]:items-center max-[550px]:content-center max-[550px]:justify-items-center max-[550px]:justify-center">
+        <div className="portfolio-work-tag overflow-hidden flex flex-col justify-center max-[550px]:row-[1] max-[550px]:col-[1]">
           <div className="project-tag-heading relative overflow-hidden">
-            <h1 ref={projectTagARef} className="project-tag-a text-[5em] font-bold text-end leading-[1] -tracking-[1px]">STRATEGY</h1>
+            <h1 ref={projectTagARef} className="project-tag-a text-[5em] font-bold text-end leading-[1] -tracking-[1px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">STRATEGY</h1>
           </div>
           <div className="project-tag-heading relative overflow-hidden">
-            <h1 ref={projectTagBRef} className="project-tag-b text-[5em] font-bold text-end leading-[1] -tracking-[1px]">DIGITAL</h1>
+            <h1 ref={projectTagBRef} className="project-tag-b text-[5em] font-bold text-end leading-[1] -tracking-[1px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">DIGITAL</h1>
           </div>
         </div>
 
-        <div className="portfolio-slider-center inset-0 flex items-center justify-center pointer-events-none">
+        <div className="portfolio-slider-center inset-0 flex items-center justify-center pointer-events-none max-[550px]:row-[2] max-[550px]:col-[1]">
           {projects.map((project, index) => (
             <div
               key={index}
               ref={el => cardsRef.current[index] = el}
-              className="tilt-card-container absolute w-[24em] h-[29em] max-h-[29em] pointer-events-auto"
+              className="tilt-card-container absolute w-[24em] h-[29em] max-h-[29em] pointer-events-auto max-[1350px]:w-[20em] max-[1350px]:h-[25em] max-[1350px]:max-h-[25em] max-[1150px]:w-[15em] max-[1150px]:h-[20em] max-[1150px]:max-h-[20em] max-[900px]:w-[12em] max-[900px]:h-[15em] max-[900px]:max-h-[15em]"
             >
               <div className="tilt-card w-full h-full bg-gray-200 rounded-2xl cursor-pointer overflow-hidden">
                 <a
@@ -505,17 +505,17 @@ const Portfolio = () => {
           ))}
         </div>
 
-        <div className="portfolio-project-name overflow-hidden flex flex-col justify-center">
+        <div className="portfolio-project-name overflow-hidden flex flex-col justify-center max-[550px]:row-[3] max-[550px]:col-[1]">
           <div className="project-name-heading flex gap-4 overflow-hidden">
-            <h1 ref={projectNameARef} className="project-name-a text-[5em] font-bold leading-[1] -tracking-[1px]">BIDAPP</h1>
-            <div ref={projectYearRef} className="project-year text-lg font-bold">2024</div>
+            <h1 ref={projectNameARef} className="project-name-a text-[5em] font-bold leading-[1] -tracking-[1px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">BIDAPP</h1>
+            <div ref={projectYearRef} className="project-year text-lg font-bold max-[1150px]:text-base">2024</div>
           </div>
           <div className="project-name-heading overflow-hidden">
-            <h1 ref={projectNameBRef} className="project-name-b text-[5em] font-bold leading-[1] -tracking-[1px]">SDK</h1>
+            <h1 ref={projectNameBRef} className="project-name-b text-[5em] font-bold leading-[1] -tracking-[1px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">SDK</h1>
           </div>
         </div>
 
-        <div ref={counterRef} className="w-full portfolio-counter absolute bottom-8 left-0 text-center font-bold">
+        <div ref={counterRef} className="w-full portfolio-counter absolute bottom-8 left-0 text-center font-bold max-[900px]:text-sm">
           01 / 06
         </div>
 
