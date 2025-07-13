@@ -13,12 +13,25 @@ const Header = () => {
     const [btnHovered, setBtnHovered] = useState(false)
 
     const [windowHeight, setWindowHeight] = useState(0)
+    const [screenWidth, setScreenWidth] = useState(null);
+
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
             setWindowHeight(typeof window !== 'undefined' && window.innerHeight)
         }
     }, [])
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setScreenWidth(window.innerWidth);
+
+            const handleResize = () => setScreenWidth(window.innerWidth);
+            window.addEventListener('resize', handleResize);
+
+            return () => window.removeEventListener('resize', handleResize);
+        }
+    }, []);
 
     const handleMenu = () => {
         if (showBg) {
@@ -89,6 +102,7 @@ const Header = () => {
 
 
 
+
     return (
         <>
             <header className='w-full px-6 py-2 flex items-center justify-between fixed top-0 left-0 z-50 max-[450px]:px-3'>
@@ -97,7 +111,7 @@ const Header = () => {
                     <LanguageSwitcher />
 
                     <div className="relative">
-                        <div className="absolute -top-[8px] -right-[8px] bg-[#FFD73B] rounded-lg duration-500" style={{ width: showBg ? (typeof window !== 'undefined' && window.innerWidth > 500 ? "380px" : "285px") : (typeof window !== 'undefined' && window.innerWidth > 500 ? "132px" : "108px"), height: showBg ? (typeof window !== 'undefined' && window.innerWidth > 700 ? "495px" : "385px") : (typeof window !== 'undefined' && window.innerWidth > 500 ? "42px" : "35px"), opacity: btnHovered || showBg ? 1 : 0 }} />
+                        <div className="absolute -top-[8px] -right-[8px] bg-[#FFD73B] rounded-lg duration-500" style={{ width: showBg ? (typeof window !== 'undefined' && screenWidth > 500 ? "380px" : "285px") : (typeof window !== 'undefined' && screenWidth > 500 ? "132px" : "108px"), height: showBg ? (typeof window !== 'undefined' && screenWidth > 700 ? "495px" : "385px") : (typeof window !== 'undefined' && screenWidth > 500 ? "42px" : "35px"), opacity: btnHovered || showBg ? 1 : 0 }} />
                         <button className='min-w-[118px] menuButton text-xl font-medium cursor-pointer -tracking-[1px] max-[700px]:text-base max-[500px]:text-sm max-[500px]:min-w-[95px]' data-hover={showBg ? "HIDE MENU" : "SHOW MENU"} onClick={handleMenu} onMouseEnter={() => setBtnHovered(true)} onMouseLeave={() => setBtnHovered(false)}>
                             <span>{showBg ? "HIDE" : "SHOW"} MENU</span>
                         </button>

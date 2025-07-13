@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useMemo } from 'react';
 
 const StackedBalls = () => {
     const [windowWidth, setWindowWidth] = useState(0);
@@ -10,15 +10,12 @@ const StackedBalls = () => {
     const ballsRef = useRef([]);
     const ballsCreatedRef = useRef(false);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        };
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
+    // useEffect(() => {
+    //     const handleResize = () => setWindowWidth(window.innerWidth);
+    //     handleResize(); // 👈 Set initial width immediately
+    //     window.addEventListener('resize', handleResize);
+    //     return () => window.removeEventListener('resize', handleResize);
+    // }, []);
 
     const skillsData = [
         { text: 'DIGITAL BRAND\nPRESENCE', color: '#FFC107', size: 'large' },
@@ -37,12 +34,21 @@ const StackedBalls = () => {
         { text: 'Email Marketing', color: '#FFC107', size: 'large' }
     ];
 
+    // const getSizeRadius = (size) => {
+    //     switch (size) {
+    //         case 'small': return windowWidth > 1200 ? 55 : windowWidth > 900 ? 40 : 25;
+    //         case 'medium': return windowWidth > 1200 ? 75 : windowWidth > 900 ? 60 : 45;
+    //         case 'large': return windowWidth > 1200 ? 95 : windowWidth > 900 ? 80 : 60;
+    //         default: return windowWidth > 1200 ? 65 : windowWidth > 900 ? 50 : 35;
+    //     }
+    // };
     const getSizeRadius = (size) => {
+        const w = window.innerWidth;
         switch (size) {
-            case 'small': return windowWidth > 1200 ? 55 : windowWidth > 900 ? 40 : 25;
-            case 'medium': return windowWidth > 1200 ? 75 : windowWidth > 900 ? 60 : 45;
-            case 'large': return windowWidth > 1200 ? 95 : windowWidth > 900 ? 80 : 60;
-            default: return windowWidth > 1200 ? 65 : windowWidth > 900 ? 50 : 35;
+            case 'small': return w > 1200 ? 55 : w > 900 ? 40 : 25;
+            case 'medium': return w > 1200 ? 75 : w > 900 ? 60 : 45;
+            case 'large': return w > 1200 ? 95 : w > 900 ? 80 : 60;
+            default: return w > 1200 ? 65 : w > 900 ? 50 : 35;
         }
     };
 
@@ -88,7 +94,18 @@ const StackedBalls = () => {
             World.add(engine.world, boundaries);
 
             const mouse = Mouse.create(render.canvas);
-            World.add(engine.world, MouseConstraint.create(engine, { mouse, constraint: { stiffness: 0.2, render: { visible: false } } }));
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+            if (!isTouchDevice) {
+                const mouseConstraint = MouseConstraint.create(engine, {
+                    mouse,
+                    constraint: {
+                        stiffness: 0.2,
+                        render: { visible: false }
+                    }
+                });
+                World.add(engine.world, mouseConstraint);
+            }
 
             Events.on(render, 'afterRender', () => {
                 const ctx = render.canvas.getContext('2d');
@@ -184,9 +201,19 @@ const StackedBalls = () => {
         return () => window.removeEventListener('resize', onResize);
     }, []);
 
+
+
+    const isTouchDevice = useMemo(() => {
+        if (typeof window === 'undefined') return false;
+        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    }, []);
+
+
+
+
     return (
         <div ref={containerRef} className="absolute inset-0 pointer-events-none">
-            <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full pointer-events-auto" />
+            <canvas ref={canvasRef} className={`absolute top-0 left-0 w-full h-full ${isTouchDevice ? 'pointer-events-none' : 'pointer-events-auto'}`} />
         </div>
     );
 };
