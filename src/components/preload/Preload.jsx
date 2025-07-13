@@ -105,12 +105,12 @@ const Preload = () => {
         >
             <div ref={topBarRef} className="w-full h-1/2 bg-black absolute left-0 top-0 z-10" />
             <div ref={bottomBarRef} className="w-full h-1/2 bg-black absolute left-0 bottom-0 z-10" />
-            <div className="w-full h-[265px] overflow-hidden relative">
+            <div className="w-full h-[265px] overflow-hidden relative max-[1350px]:h-[200px] max-[1000px]:h-[180px] max-[700px]:h-[160px] max-[450px]:h-[150px]">
                 {texts.map((line, idx) => (
                     <p
                         key={idx}
                         ref={el => paragraphsRef.current[idx] = el}
-                        className="text-[190px] font-medium text-center leading-[120%] -tracking-[6px] absolute w-full left-0 overflow-hidden"
+                        className="text-[190px] font-medium text-center leading-[120%] -tracking-[6px] absolute w-full left-0 overflow-hidden max-[1350px]:text-[140px] max-[1000px]:text-[100px] max-[700px]:text-[70px] max-[450px]:text-[50px]"
                     >
                         {line.split('').map((char, j) => (
                             <span key={j} className="inline-block">

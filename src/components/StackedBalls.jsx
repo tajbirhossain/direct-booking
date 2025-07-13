@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 
 const StackedBalls = () => {
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [windowWidth, setWindowWidth] = useState(0);
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
     const engineRef = useRef(null);

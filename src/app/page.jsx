@@ -181,7 +181,7 @@ export default function Home() {
 
         <Portfolio />
 
-        <Contact />
+        {/* <Contact /> */}
       </main>
     </div>
   );
