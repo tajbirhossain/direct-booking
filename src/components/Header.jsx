@@ -91,7 +91,7 @@ const Header = () => {
 
     return (
         <>
-            <header className='w-full px-6 py-2 flex items-center justify-between fixed top-0 left-0 z-50'>
+            <header className='w-full px-6 py-2 flex items-center justify-between fixed top-0 left-0 z-50 max-[450px]:px-3'>
                 <img src="/images/logo-black.png" alt="" className='h-20 max-[700px]:h-14' />
                 <div className="flex items-center justify-center gap-6 max-[500px]:gap-3">
                     <LanguageSwitcher />

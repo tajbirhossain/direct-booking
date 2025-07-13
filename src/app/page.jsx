@@ -29,27 +29,27 @@ const videoUrl = [
 ]
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [loaded, setLoaded] = useState(false);
+  // const [isLoading, setIsLoading] = useState(true);
+  const [loaded, setLoaded] = useState(true);
 
   const [videoLoaded, setVideoLoaded] = useState(false)
   const [videoLoaded2, setVideoLoaded2] = useState(false)
   const [videoLoaded3, setVideoLoaded3] = useState(false)
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 9000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 9000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  useEffect(() => {
-    if (!isLoading) {
-      requestAnimationFrame(() => {
-        setLoaded(true);
-      });
-    }
-  }, [isLoading]);
+  // useEffect(() => {
+  //   if (!isLoading) {
+  //     requestAnimationFrame(() => {
+  //       setLoaded(true);
+  //     });
+  //   }
+  // }, [isLoading]);
 
 
 
@@ -105,9 +105,9 @@ export default function Home() {
   };
 
 
-  if (isLoading) {
-    return <Preload />;
-  }
+  // if (isLoading) {
+  //   return <Preload />;
+  // }
 
 
   return (
@@ -121,8 +121,8 @@ export default function Home() {
       <Header />
       <main>
         <section id="hero" className="grid grid-rows-[0.5fr_0.5fr_1fr] min-h-screen max-h-screen max-[650px]:grid-rows-[0.5fr_1.5fr] relative overflow-hidden">
-          <div className="p-6 row-[2/3]">
-            <h2 className="text-5xl font-bold text-center uppercase leading-[1.2] max-[1800px]:text-4xl max-[1350px]:text-3xl max-[900px]:text-2xl max-[650px]:text-3xl max-[650px]:text-start max-[450px]:text-2xl">
+          <div className="p-6 row-[2/3] max-[450px]:p-3">
+            <h2 className="text-5xl font-bold text-center uppercase leading-[1.2] max-[1800px]:text-4xl max-[1350px]:text-3xl max-[900px]:text-2xl max-[650px]:text-3xl max-[650px]:text-start">
               Stop paying fees. Start owning your bookings.
               <br />
               <span

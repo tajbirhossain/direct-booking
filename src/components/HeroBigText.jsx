@@ -198,7 +198,7 @@ const HeroBigText = () => {
             </div> */}
             </div>
 
-            <img src="/images/DIRECT-BOOKINGZ-stroke.svg" alt="" className='w-[1200px] max-w-[1200px] absolute top-1/2 left-1/2 -translate-1/2 -z-[1] opacity-10 max-[500px]:w-[800px] hidden max-[650px]:block' />
+            <img src="/images/DIRECT-BOOKINGZ-stroke.svg" alt="" className='w-[1200px] max-w-[1200px] absolute bottom-10 left-1/2 -translate-x-1/2 -z-[1] opacity-10 max-[500px]:w-[800px] hidden max-[650px]:block' />
         </>
     )
 }
