@@ -163,7 +163,7 @@ const PriceCalculator = () => {
             <section id='presentation' ref={containerRef} className='bg-black max-h-screen min-h-screen relative overflow-hidden'>
                 <div className="relative w-full h-[500vh]">
                     <div className="relative grid grid-cols-[1fr] grid-rows-[1fr] gap-x-0 gap-y-0 pt-[2em] pb-[2em] items-center justify-items-center h-full max-h-screen">
-                        <div id='priceCalculator' ref={addToRefs} className="relative w-[90%] h-[calc(100vh-64px)] flex items-center bg-black rounded-2xl col-[1] row-[1] stackedCard overflow-hidden" >
+                        <div id='priceCalculator' ref={addToRefs} className="relative w-[90%] h-[calc(100vh-64px)] flex items-center bg-black rounded-2xl col-[1] row-[1] stackedCard max-[500px]:w-[95%] max-[500px]:h-[550px] overflow-hidden" >
                             <video muted loop autoPlay className='w-full h-full absolute top-0 left-0 object-cover'>
                                 <source src="/videos/calculator-use-2.mp4" type="video/mp4" />
                             </video>
@@ -283,7 +283,7 @@ const PriceCalculator = () => {
                             </div>
                         </div>
 
-                        <div ref={addToRefs} className="relative w-[90%] h-[calc(100vh-64px)] flex items-center bg-[#f3f3ef] rounded-2xl col-[1] row-[1] stackedCard">
+                        <div ref={addToRefs} className="relative w-[90%] h-[calc(100vh-64px)] flex items-center bg-[#f3f3ef] rounded-2xl col-[1] row-[1] stackedCard max-[500px]:w-[95%] max-[500px]:h-[550px]">
                             <div className="w-full h-full">
                                 <div className="w-full h-full text-center relative py-[60px] flex items-center">
                                     <div className="w-full h-[60px] absolute top-0 left-0 border-b-[1px] border-b-black max-[1150px]:h-[45px]">
@@ -316,7 +316,7 @@ const PriceCalculator = () => {
                             </div>
                         </div>
 
-                        <div id='ourSkills' ref={addToRefs} className="relative w-[90%] h-[calc(100vh-64px)] flex items-center bg-black rounded-2xl col-[1] row-[1] stackedCard">
+                        <div id='ourSkills' ref={addToRefs} className="relative w-[90%] h-[calc(100vh-64px)] flex items-center bg-black rounded-2xl col-[1] row-[1] stackedCard max-[500px]:w-[95%] max-[500px]:h-[550px]">
                             <div className="w-full h-full">
                                 <div className="w-full h-full relative pt-[120px] text-center max-[1150px]:pt-[90px] max-[900px]:pt-[40px]">
                                     <h3 className='max-w-[1250px] text-5xl font-black text-white mx-auto relative z-[1] max-[1350px]:text-4xl max-[1150px]:text-3xl max-[900px]:text-2xl'>
@@ -327,7 +327,7 @@ const PriceCalculator = () => {
                             </div>
                         </div>
 
-                        <div ref={addToRefs} className="relative w-[90%] h-[calc(100vh-64px)] flex items-center bg-[#f3f3ef] rounded-2xl col-[1] row-[1] stackedCard">
+                        <div ref={addToRefs} className="relative w-[90%] h-[calc(100vh-64px)] flex items-center bg-[#f3f3ef] rounded-2xl col-[1] row-[1] stackedCard max-[500px]:w-[95%] max-[500px]:h-[550px]">
                             <div className="w-full h-full rounded-2xl overflow-hidden relative">
                                 {/* <div className="w-full h-full pt-[120px]">
                                 <h3 className='max-w-[1150px] text-5xl font-black text-black text-center mx-auto mb-20'>
@@ -349,7 +349,7 @@ const PriceCalculator = () => {
                             </div>
                         </div>
 
-                        <div ref={addToRefs} className="relative w-[90%] h-[calc(100vh-64px)] flex items-center bg-black rounded-2xl col-[1] row-[1] stackedCard lastStackedCard">
+                        <div ref={addToRefs} className="relative w-[90%] h-[calc(100vh-64px)] flex items-center bg-black rounded-2xl col-[1] row-[1] stackedCard max-[500px]:w-[95%] max-[500px]:h-[550px] lastStackedCard">
                             <div className="w-full h-full">
                                 <div className="w-full h-full flex flex-col items-center justify-center text-center text-white">
                                     <h3 className='max-w-[900px] text-5xl font-black mb-7 relative z-[1] max-[1350px]:text-4xl max-[1150px]:text-3xl max-[900px]:text-2xl'>AND THIS IS JUST ONLY SMALL PART OF OUR PRESENTATION</h3>
