@@ -8,6 +8,7 @@ import HeroBgVideo from "@/components/HeroBgVideo";
 import PriceCalculator from "@/components/sections/PriceCalculator";
 import Portfolio from "@/components/sections/Portfolio";
 import Contact from "@/components/sections/Contact";
+import HeroFirstBgVideo from "@/components/HeroFirstBgVideo";
 
 
 const videoUrl = [
@@ -29,27 +30,27 @@ const videoUrl = [
 ]
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [loaded, setLoaded] = useState(false);
+  // const [isLoading, setIsLoading] = useState(true);
+  const [loaded, setLoaded] = useState(true);
 
   const [videoLoaded, setVideoLoaded] = useState(false)
   const [videoLoaded2, setVideoLoaded2] = useState(false)
   const [videoLoaded3, setVideoLoaded3] = useState(false)
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 9000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 9000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  useEffect(() => {
-    if (!isLoading) {
-      requestAnimationFrame(() => {
-        setLoaded(true);
-      });
-    }
-  }, [isLoading]);
+  // useEffect(() => {
+  //   if (!isLoading) {
+  //     requestAnimationFrame(() => {
+  //       setLoaded(true);
+  //     });
+  //   }
+  // }, [isLoading]);
 
 
 
@@ -105,9 +106,9 @@ export default function Home() {
   };
 
 
-  if (isLoading) {
-    return <Preload />;
-  }
+  // if (isLoading) {
+  //   return <Preload />;
+  // }
 
 
   return (
@@ -171,7 +172,7 @@ export default function Home() {
           <HeroBigText />
 
           <div>
-            <HeroBgVideo videoRef={videoRef} videoLoaded={videoLoaded} videoUrl={videoUrl[0]} />
+            <HeroFirstBgVideo videoRef={videoRef} videoLoaded={videoLoaded} videoUrl={videoUrl[0]} />
             <HeroBgVideo videoRef={videoRef2} videoLoaded={videoLoaded2} videoUrl={videoUrl[1]} />
             <HeroBgVideo videoRef={videoRef3} videoLoaded={videoLoaded3} videoUrl={videoUrl[2]} />
           </div>
