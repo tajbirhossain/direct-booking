@@ -56,7 +56,7 @@ export default function Home() {
 
 
 
-  const videoRef = useRef(null);
+  // const videoRef = useRef(null);
   const videoRef2 = useRef(null);
   const videoRef3 = useRef(null);
 
@@ -64,10 +64,10 @@ export default function Home() {
     setTimeout(() => {
       if (id === 1) {
         setVideoLoaded(true)
-        if (videoRef.current) {
-          videoRef.current.play().catch(() => {
-          });
-        }
+        // if (videoRef.current) {
+        //   videoRef.current.play().catch(() => {
+        //   });
+        // }
       } else if (id === 2) {
         setVideoLoaded2(true)
         if (videoRef2.current) {
@@ -88,9 +88,9 @@ export default function Home() {
     setTimeout(() => {
       if (id === 1) {
         setVideoLoaded(false)
-        if (videoRef.current) {
-          videoRef.current.pause();
-        }
+        // if (videoRef.current) {
+        //   videoRef.current.pause();
+        // }
       } else if (id === 2) {
         setVideoLoaded2(false)
         if (videoRef2.current) {
@@ -172,7 +172,7 @@ export default function Home() {
           <HeroBigText />
 
           <div>
-            <HeroFirstBgVideo videoRef={videoRef} videoLoaded={videoLoaded} videoUrl={videoUrl[0]} />
+            <HeroFirstBgVideo videoLoaded={videoLoaded} />
             <HeroBgVideo videoRef={videoRef2} videoLoaded={videoLoaded2} videoUrl={videoUrl[1]} />
             <HeroBgVideo videoRef={videoRef3} videoLoaded={videoLoaded3} videoUrl={videoUrl[2]} />
           </div>

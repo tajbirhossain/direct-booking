@@ -2,20 +2,20 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const videos = [
     {
-        src: "/videos/design-and-branding-2.mp4",
-        logo: '/images/logos/1.png',
+        src: "/videos/design-and-branding-1.mp4",
+        logo: '/images/logos/6.png',
     },
     {
         src: "/videos/design-and-branding-2.mp4",
-        logo: '/images/logos/1.png',
+        logo: '/images/logos/7.png',
     },
     {
-        src: "/videos/design-and-branding-2.mp4",
+        src: "/videos/design-and-branding-3.mp4",
         logo: '/images/logos/1.png',
     },
 ];
 
-const HeroFirstBgVideo = () => {
+const HeroFirstBgVideo = ({ videoLoaded }) => {
     const videoRefs = useRef([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [logoVisible, setLogoVisible] = useState([false, true, true]);
@@ -51,8 +51,19 @@ const HeroFirstBgVideo = () => {
         };
     }, [currentIndex]);
 
+    useEffect(() => {
+        const currentVideo = videoRefs.current[currentIndex];
+        if (!currentVideo) return;
+
+        if (videoLoaded) {
+            currentVideo.play().catch(console.error);
+        } else {
+            currentVideo.pause();
+        }
+    }, [videoLoaded, currentIndex]);
+
     return (
-        <div className="flex w-screen h-screen overflow-hidden">
+        <div className={`flex w-screen h-screen fixed top-0 left-0 z-10 duration-200 overflow-hidden ${videoLoaded ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-[1.15] pointer-events-none"}`}>
             {videos.map((video, index) => (
                 <div key={index} className="relative flex-1 w-full h-full">
                     <video
@@ -65,7 +76,6 @@ const HeroFirstBgVideo = () => {
                         disablePictureInPicture
                         controlsList="nodownload"
                     />
-
                     {logoVisible[index] && (
                         <div className="w-full h-full bg-white flex items-center justify-center z-10 relative">
                             <img

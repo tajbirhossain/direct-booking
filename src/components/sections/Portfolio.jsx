@@ -51,28 +51,34 @@ const Portfolio = () => {
       year: "2022",
       link: "https://www.behance.net/gallery/145220925/Urban-Amenities-branding-for-modern-furniture-company"
     },
-    {
-      name: ["INDIEVID", "LABEL"],
-      tag: ["IDENTITY,", "WEBSITE"],
-      year: "2022",
-      link: "https://www.behance.net/gallery/147247443/Indievid-indie-music-label"
-    },
-    {
-      name: ["SCREEN", "BLASTERS"],
-      tag: ["READYMAG", "WEBSITE"],
-      year: "2022",
-      link: "https://www.behance.net/gallery/176041679/ScreenBlasters-Design-website-made-via-Readymag"
-    }
+    // {
+    //   name: ["INDIEVID", "LABEL"],
+    //   tag: ["IDENTITY,", "WEBSITE"],
+    //   year: "2022",
+    //   link: "https://www.behance.net/gallery/147247443/Indievid-indie-music-label"
+    // },
+    // {
+    //   name: ["SCREEN", "BLASTERS"],
+    //   tag: ["READYMAG", "WEBSITE"],
+    //   year: "2022",
+    //   link: "https://www.behance.net/gallery/176041679/ScreenBlasters-Design-website-made-via-Readymag"
+    // }
   ];
 
 
+  // const imageBases = [
+  //   "images/cards/bdp-",
+  //   "images/cards/unnts-",
+  //   "images/cards/plmc-",
+  //   "images/cards/urb-",
+  //   "images/cards/indvd-",
+  //   "images/cards/scrn-"
+  // ];
   const imageBases = [
-    "images/cards/bdp-",
-    "images/cards/unnts-",
-    "images/cards/plmc-",
-    "images/cards/urb-",
-    "images/cards/indvd-",
-    "images/cards/scrn-"
+    "images/cards/card-1",
+    "images/cards/card-2",
+    "images/cards/card-3",
+    "images/cards/card-4",
   ];
 
   useEffect(() => {
@@ -148,7 +154,7 @@ const Portfolio = () => {
             projectTagARef.current.textContent = projects[index].tag[0];
             projectTagBRef.current.textContent = projects[index].tag[1];
             projectYearRef.current.textContent = projects[index].year;
-            counterRef.current.textContent = `${String(index + 1).padStart(2, '0')} / 06`;
+            counterRef.current.textContent = `${String(index + 1).padStart(2, '0')} / 04`;
           }
         })
           .set([
@@ -272,36 +278,48 @@ const Portfolio = () => {
 
 
           const imageContainer = tiltElement.querySelector('a');
+          // if (imageContainer && imageBases[index] && !imageContainer.querySelector('img')) {
+          //   for (let i = 1; i <= 5; i++) {
+          //     const img = document.createElement('img');
+          //     img.src = `${imageBases[index]}0${i}.avif`;
+          //     img.style.position = 'absolute';
+          //     img.style.top = '0';
+          //     img.style.left = '0';
+          //     img.style.width = '100%';
+          //     img.style.height = '100%';
+          //     img.style.objectFit = 'cover';
+          //     img.style.opacity = i === 1 ? 1 : 0;
+          //     imageContainer.appendChild(img);
+          //   }
+
+          //   const images = Array.from(imageContainer.querySelectorAll('img'));
+          //   const sequenceTL = gsap.timeline({
+          //     repeat: -1,
+          //     repeatDelay: 1,
+          //     yoyo: true,
+          //     paused: true
+          //   }).to(images, {
+          //     autoAlpha: 1,
+          //     duration: 0,
+          //     stagger: { amount: 3 }
+          //   });
+
+          //   sequenceTLsRef.current[index] = sequenceTL;
+
+          //   tiltElement.addEventListener('mouseenter', () => sequenceTL.play());
+          //   tiltElement.addEventListener('mouseleave', () => sequenceTL.pause());
+          // }
+
           if (imageContainer && imageBases[index] && !imageContainer.querySelector('img')) {
-            for (let i = 1; i <= 5; i++) {
-              const img = document.createElement('img');
-              img.src = `${imageBases[index]}0${i}.avif`;
-              img.style.position = 'absolute';
-              img.style.top = '0';
-              img.style.left = '0';
-              img.style.width = '100%';
-              img.style.height = '100%';
-              img.style.objectFit = 'cover';
-              img.style.opacity = i === 1 ? 1 : 0;
-              imageContainer.appendChild(img);
-            }
-
-            const images = Array.from(imageContainer.querySelectorAll('img'));
-            const sequenceTL = gsap.timeline({
-              repeat: -1,
-              repeatDelay: 1,
-              yoyo: true,
-              paused: true
-            }).to(images, {
-              autoAlpha: 1,
-              duration: 0,
-              stagger: { amount: 3 }
-            });
-
-            sequenceTLsRef.current[index] = sequenceTL;
-
-            tiltElement.addEventListener('mouseenter', () => sequenceTL.play());
-            tiltElement.addEventListener('mouseleave', () => sequenceTL.pause());
+            const img = document.createElement('img');
+            img.src = `${imageBases[index]}.png`;
+            img.style.position = 'absolute';
+            img.style.top = '0';
+            img.style.left = '0';
+            img.style.width = '100%';
+            img.style.height = '100%';
+            img.style.objectFit = 'cover';
+            imageContainer.appendChild(img);
           }
 
 
@@ -516,7 +534,7 @@ const Portfolio = () => {
         </div>
 
         <div ref={counterRef} className="w-full portfolio-counter absolute bottom-8 left-0 text-center font-bold max-[900px]:text-sm">
-          01 / 06
+          01 / 04
         </div>
 
         <div
