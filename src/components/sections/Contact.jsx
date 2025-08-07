@@ -40,7 +40,7 @@ const Contact = () => {
   return (
     <section id='contact' className='w-full min-h-screen bg-[rgb(6,6,6)] relative flex items-center justify-center py-5'>
       <video ref={bgRef} loop muted autoPlay className='w-full h-full max-h-full object-cover fixed top-0 left-0 pointer-events-none opacity-0'>
-        <source src="/videos/contact-video-sm.mp4" type="video/mp4" />
+        <source src="/videos/contact-video-sm-3.mp4" type="video/mp4" />
       </video>
       {/* <img ref={bgRef} src="/images/contact-3d.jpg" alt="" className='w-full h-full max-h-full object-cover fixed top-0 left-0 pointer-events-none opacity-0' /> */}
       {/* <img

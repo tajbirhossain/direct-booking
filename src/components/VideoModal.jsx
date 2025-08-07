@@ -24,7 +24,7 @@ const VideoModal = ({ showVideoModal, setShowVideoModal }) => {
                     <iframe
                         key={showVideoModal}
                         className='size-full rounded-md'
-                        src="https://www.youtube.com/embed/NLjnOsP_q1U?si=Gv88q-oQGpjQtHR2"
+                        src="https://www.youtube.com/embed/7Bm_7YAVBpg?si=EeKEdiS7kto08SpS"
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerPolicy="strict-origin-when-cross-origin"

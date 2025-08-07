@@ -335,7 +335,7 @@ const PriceCalculator = () => {
                                 </h3>
                                 <AutoScrollCards />
                             </div> */}
-                                <img src="/images/customer-review.jpg" alt="" className='w-full h-full object-cover' />
+                                <img src="/images/customer-review.png" alt="" className='w-full h-full object-cover' />
                                 <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
                                 <div className="size-[183px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-full max-[1150px]:size-[120px]">
                                     <button

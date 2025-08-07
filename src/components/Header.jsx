@@ -134,7 +134,7 @@ const Header = () => {
                                 <li className='menuButton w-fit text-[3em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[60ms] max-[700px]:text-[2em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "60ms" : "60ms" }} data-hover='Our Skills'>
                                     <a className='relative z-[1]' onClick={handleNav3}>
                                         <span className='w-fit'>
-                                            Our Skills
+                                            About Us
                                         </span>
                                     </a>
                                 </li>
@@ -164,7 +164,7 @@ const Header = () => {
                                 <a href="#" className='flex items-center group mb-2'>
                                     <img src="/images/icons/right-up.png" alt="" className='w-5 mr-1 duration-300 rotate-0 group-hover:rotate-45' />
                                     <p data-hover='HELLO@DBOOKING.COM' className='menuButton font-bold'>
-                                        <span>HELLO@DBOOKING.COM</span>
+                                        <span className=' uppercase'>support@directbookingz.com</span>
                                     </p>
                                 </a>
                                 <a href="#" className='flex items-center group mb-2'>
