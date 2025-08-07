@@ -114,10 +114,10 @@ const HeroBigText = () => {
                         <p className='w-[250px] max-[950px]:w-[200px]'>{location || 'Loading location...'}</p>
                     </div>
                     <div className='flex items-center gap-28 font-medium px-3 max-[1250px]:gap-16 max-[1050px]:gap-10 max-[1050px]:text-sm max-[950px]:gap-5 max-[950px]:text-xs'>
-                        <p>COMMUNICATION AGENCY</p>
+                        <p>DIRECT RENTALS</p>
                     </div>
                     <div className='flex items-center gap-28 font-medium max-[1250px]:gap-16 max-[1050px]:gap-10 max-[1050px]:text-sm max-[950px]:gap-5 max-[950px]:text-xs'>
-                        <p><a href='https://behance.net'>BEHANCE</a></p>
+                        <p><a href='https://behance.net'>YOUTUBE</a></p>
                         <p><a href='https://instagram.com'>INSTAGRAM</a></p>
                         <p><a href='https://facebook.com'>FACEBOOK</a></p>
                     </div>

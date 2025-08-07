@@ -161,10 +161,10 @@ const Header = () => {
                                         <span>FRENCE VERSION</span>
                                     </p>
                                 </a> */}
-                                <a href="#" className='flex items-center group mb-2'>
+                                <a href="mailto:support@directbookingz.com" className='flex items-center group mb-2'>
                                     <img src="/images/icons/right-up.png" alt="" className='w-5 mr-1 duration-300 rotate-0 group-hover:rotate-45' />
-                                    <p data-hover='HELLO@DBOOKING.COM' className='menuButton font-bold'>
-                                        <span className=' uppercase'>support@directbookingz.com</span>
+                                    <p data-hover='SUPPORT@DIRECTBOOKINGZ.COM' className='menuButton font-bold'>
+                                        <span>SUPPORT@DIRECTBOOKINGZ.COM</span>
                                     </p>
                                 </a>
                                 <a href="#" className='flex items-center group mb-2'>
