@@ -28,11 +28,10 @@ const Portfolio = () => {
 
   const projects = [
     {
-      // name: ["BIDAPP", "SDK"],
-      name: ["SEARCHA", "STAY"],
-      tag: ["DIGITAL", "STRATEGY"],
-      year: "2020",
-      link: "https://www.behance.net/gallery/199373991/SDK-Platform-bidapp-UXUI-Brand-Identity"
+      name: ["NYC", "RENTALS"],
+      tag: ["BRAND", "IDENTITY"],
+      year: "2023",
+      link: "https://www.behance.net/gallery/131077809/Polemica-online-gaming-platform-rebranding"
     },
     {
       name: ["MIAMI", "STAYS"],
@@ -41,10 +40,11 @@ const Portfolio = () => {
       link: "https://www.behance.net/gallery/170376729/Units-Autonomous-Community"
     },
     {
-      name: ["NYC", "RENTALS"],
-      tag: ["BRAND", "IDENTITY"],
-      year: "2023",
-      link: "https://www.behance.net/gallery/131077809/Polemica-online-gaming-platform-rebranding"
+      // name: ["BIDAPP", "SDK"],
+      name: ["SEARCH", "STAY"],
+      tag: ["DIGITAL", "STRATEGY"],
+      year: "2020",
+      link: "https://www.behance.net/gallery/199373991/SDK-Platform-bidapp-UXUI-Brand-Identity"
     },
     {
       name: ["FRENCH", "RIVIERA"],
@@ -76,9 +76,9 @@ const Portfolio = () => {
   //   "images/cards/scrn-"
   // ];
   const imageBases = [
-    "images/cards/card-1",
-    "images/cards/card-2",
     "images/cards/card-3",
+    "images/cards/card-2",
+    "images/cards/card-1",
     "images/cards/card-4-2",
   ];
 
@@ -494,10 +494,10 @@ const Portfolio = () => {
       <div className="portfolio-slider-layout absolute inset-0 grid grid-cols-[1fr_1fr_1fr] z-20 max-[550px]:grid-cols-[1fr] max-[550px]:grid-rows-[1fr_1fr_1fr] max-[550px]:items-center max-[550px]:content-center max-[550px]:justify-items-center max-[550px]:justify-center">
         <div className="portfolio-work-tag overflow-hidden flex flex-col justify-center max-[550px]:row-[1] max-[550px]:col-[1]">
           <div className="project-tag-heading relative overflow-hidden">
-            <h1 ref={projectTagARef} className="project-tag-a text-[5em] font-bold text-end leading-[1] -tracking-[1px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">DIGITAL</h1>
+            <h1 ref={projectTagARef} className="project-tag-a text-[5em] font-bold text-end leading-[1] -tracking-[1px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">BRAND</h1>
           </div>
           <div className="project-tag-heading relative overflow-hidden">
-            <h1 ref={projectTagBRef} className="project-tag-b text-[5em] font-bold text-end leading-[1] -tracking-[1px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">STRATEGY</h1>
+            <h1 ref={projectTagBRef} className="project-tag-b text-[5em] font-bold text-end leading-[1] -tracking-[1px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">IDENTITY</h1>
           </div>
         </div>
 
@@ -526,11 +526,11 @@ const Portfolio = () => {
 
         <div className="portfolio-project-name overflow-hidden flex flex-col justify-center max-[550px]:row-[3] max-[550px]:col-[1]">
           <div className="project-name-heading flex gap-4 overflow-hidden">
-            <h1 ref={projectNameARef} className="project-name-a text-[5em] font-bold leading-[1] -tracking-[1px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">SEARCHA</h1>
-            <div ref={projectYearRef} className="project-year text-lg font-bold max-[1150px]:text-base">2020</div>
+            <h1 ref={projectNameARef} className="project-name-a text-[5em] font-bold leading-[1] -tracking-[1px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">NYC</h1>
+            <div ref={projectYearRef} className="project-year text-lg font-bold max-[1150px]:text-base">2023</div>
           </div>
           <div className="project-name-heading overflow-hidden">
-            <h1 ref={projectNameBRef} className="project-name-b text-[5em] font-bold leading-[1] -tracking-[1px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">STAY</h1>
+            <h1 ref={projectNameBRef} className="project-name-b text-[5em] font-bold leading-[1] -tracking-[1px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">RENTALS</h1>
           </div>
         </div>
 
