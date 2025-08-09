@@ -4,6 +4,7 @@ import LanguageSwitcher from './LanguageSwitcher'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import { useTranslation } from 'react-i18next'
 
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
@@ -14,6 +15,9 @@ const Header = () => {
 
     const [windowHeight, setWindowHeight] = useState(0)
     const [screenWidth, setScreenWidth] = useState(null);
+
+
+    const { t } = useTranslation()
 
 
     useEffect(() => {
@@ -111,44 +115,44 @@ const Header = () => {
                     <LanguageSwitcher />
 
                     <div className="relative">
-                        <div className="absolute -top-[8px] -right-[8px] bg-[#FFD73B] rounded-lg duration-500" style={{ width: showBg ? (typeof window !== 'undefined' && screenWidth > 500 ? "380px" : "285px") : (typeof window !== 'undefined' && screenWidth > 500 ? "132px" : "108px"), height: showBg ? (typeof window !== 'undefined' && screenWidth > 700 ? "495px" : "385px") : (typeof window !== 'undefined' && screenWidth > 500 ? "42px" : "35px"), opacity: btnHovered || showBg ? 1 : 0 }} />
+                        <div className="absolute -top-[8px] -right-[8px] bg-[#FFD73B] rounded-lg duration-500" style={{ width: showBg ? (typeof window !== 'undefined' && screenWidth > 500 ? "380px" : "285px") : (typeof window !== 'undefined' && screenWidth > 500 ? "132px" : "108px"), height: showBg ? (typeof window !== 'undefined' && screenWidth > 700 ? "430px" : "385px") : (typeof window !== 'undefined' && screenWidth > 500 ? "42px" : "35px"), opacity: btnHovered || showBg ? 1 : 0 }} />
                         <button className='min-w-[118px] menuButton text-xl font-medium cursor-pointer -tracking-[1px] max-[700px]:text-base max-[500px]:text-sm max-[500px]:min-w-[95px]' data-hover={showBg ? "HIDE MENU" : "SHOW MENU"} onClick={handleMenu} onMouseEnter={() => setBtnHovered(true)} onMouseLeave={() => setBtnHovered(false)}>
-                            <span>{showBg ? "HIDE" : "SHOW"} MENU</span>
+                            <span>{showBg ? "HIDE MENU" : "SHOW MENU"}</span>
                         </button>
                         <div className="w-[355px] h-[480px] absolute top-5 right-0 pr-4 duration-300 max-[500px]:w-[250px] max-[500px]:h-[340px]" style={{ opacity: isMenuActive ? 1 : 0, pointerEvents: isMenuActive ? "auto" : "none" }}>
                             <ul className='border-b-[1px] border-b-[#E5C135] pb-5 mb-6'>
-                                <li className='menuButton w-fit text-[3em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[0ms] max-[700px]:text-[2em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "0ms" : "120ms" }} data-hover='Main'>
+                                <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[0ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "0ms" : "120ms" }} data-hover='Main'>
                                     <a className='relative z-[1]' onClick={handleNav1}>
                                         <span className='w-fit'>
-                                            Main
+                                            {t('header.menus', { returnObjects: true })[0]}
                                         </span>
                                     </a>
                                 </li>
-                                <li className='menuButton w-fit text-[3em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[30ms] max-[700px]:text-[2em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "30ms" : "90ms" }} data-hover='Price Calculator'>
+                                <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[30ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "30ms" : "90ms" }} data-hover='Price Calculator'>
                                     <a className='relative z-[1]' onClick={handleNav2}>
                                         <span className='w-fit'>
-                                            Price Calculator
+                                            {t('header.menus', { returnObjects: true })[1]}
                                         </span>
                                     </a>
                                 </li>
-                                <li className='menuButton w-fit text-[3em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[60ms] max-[700px]:text-[2em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "60ms" : "60ms" }} data-hover='Our Skills'>
+                                <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[60ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "60ms" : "60ms" }} data-hover='Our Skills'>
                                     <a className='relative z-[1]' onClick={handleNav3}>
                                         <span className='w-fit'>
-                                            About Us
+                                            {t('header.menus', { returnObjects: true })[2]}
                                         </span>
                                     </a>
                                 </li>
-                                <li className='menuButton w-fit text-[3em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[90ms] max-[700px]:text-[2em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "90ms" : "30ms" }} data-hover='Selected Works'>
+                                <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[90ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "90ms" : "30ms" }} data-hover='Selected Works'>
                                     <a className='relative z-[1]' onClick={handleNav4}>
                                         <span className='w-fit'>
-                                            Selected Works
+                                            {t('header.menus', { returnObjects: true })[3]}
                                         </span>
                                     </a>
                                 </li>
-                                <li className='menuButton w-fit text-[3em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[120ms] max-[700px]:text-[2em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "120ms" : "0ms" }} data-hover='Contact'>
+                                <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[120ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "120ms" : "0ms" }} data-hover='Contact'>
                                     <a className='relative z-[1]' onClick={handleNav5}>
                                         <span className='w-fit'>
-                                            Contact
+                                            {t('header.menus', { returnObjects: true })[4]}
                                         </span>
                                     </a>
                                 </li>

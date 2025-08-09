@@ -1,0 +1,73 @@
+{
+    "header": {
+        "showMenu": "SHOW MENU",
+        "hideMenu": "HIDE MENU",
+        "menus": [
+            "Main",
+            "Price Calculator",
+            "About Us",
+            "Selected Works",
+            "Contact"
+        ]
+    },
+    "hero": {
+        "main": "Stop paying fees. Start owning your bookings.<brTag /> <hoverOne>DESIGN AND BRANDING</hoverOne>, <hoverTwo>ADVERTISING</hoverTwo>, <hoverThree>WEB DEVELOPMENT</hoverThree> AND putting<brTag /> power back in the hands of hosts and property managers.",
+        "small": "DIRECT RENTALS"
+    },
+    "cards": {
+        "first": {
+            "heading": "OTA reliance ?",
+            "range1": "Number of listings",
+            "range2": "Average Daily Rate",
+            "range3": "Occupancy Rate",
+            "range4": "OTA Bookings Rate",
+            "priceProf": "In Profits Every Year",
+            "subHeading1": "Your Occupancy Rate is {{occupancySts}} the industry average",
+            "para1": "By increasing your occupancy by just 20% annually with Direct Bookingz, you will lead to <spanBlue>${{extraRevenue}} in extra revenue</spanBlue>.",
+            "subHeading2": "Your OTA Bookings are {{otaSts}} the industry average",
+            "para2": "By increasing your direct bookings by just 10% annually, you could save <spanBlue>${{saveOta}} in OTA fees</spanBlue>.",
+            "below": "below",
+            "above": "above"
+        },
+        "second": {
+            "heading": "DIRECT BOOKINGZ TEAM HAS BEEN IN THE GAME FOR 5 STRAIGHT YEARS",
+            "tickers": [
+                "VILLAS",
+                "CABINS",
+                "COTTAGES",
+                "APARTMENTS & CONDOS",
+                "BEACH HOUSES",
+                "TREE HOUSES",
+                "HOUSEBOATS",
+                "MANSIONS",
+                "CHALETS",
+                "HOSTELS",
+                "SHARED APARTMENTS"
+            ]
+        },
+        "third": {
+            "heading": "OUR WORK NOT BOUNDED BY BEATIFUL WEBSITES, CREATIVE VISUALS AND MOTION DESIGN"
+        },
+        "fifth": {
+            "heading": "AND THIS IS JUST ONLY SMALL PART OF OUR PRESENTATION",
+            "openPdfText": "OPEN FULL PDF VERSION"
+        }
+    },
+    "portfolio": {
+        "subHeading": "BEST OF",
+        "heading": "OUR WORKS"
+    },
+    "contact": {
+        "subHeading": "Let's Connect!",
+        "heading": "Got a question or just want to say hi?",
+        "inputs": {
+            "name": "Your Name",
+            "email": "Your Email Address",
+            "phone": "Your Phone Number",
+            "service": "Choose Service",
+            "message": "Your Message..."
+        },
+        "submit": "Submit",
+        "submitting": "Submitting..."
+    }
+}

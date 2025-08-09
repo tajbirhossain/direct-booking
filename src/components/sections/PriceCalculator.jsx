@@ -5,6 +5,7 @@ import InfiniteTicker from '../InfiniteTicker'
 import StackedBalls from '../StackedBalls'
 import AutoScrollCards from '../AutoScrollCards'
 import VideoModal from '../VideoModal'
+import { Trans, useTranslation } from 'react-i18next'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,6 +16,9 @@ const PriceCalculator = () => {
     const [ota, setOta] = useState(90)
 
     const [showVideoModal, setShowVideoModal] = useState(false)
+
+
+    const { t } = useTranslation()
 
 
 
@@ -172,10 +176,10 @@ const PriceCalculator = () => {
                                 <div className="size-full flex items-center py-20">
                                     <div className="w-full flex items-center py-5 px-20 bg-[rgba(0,0,0,0.7)] max-[1150px]:py-4 max-[1150px]:px-10 max-[900px]:py-2 max-[900px]:px-5 max-[550px]:flex-col">
                                         <div className="w-1/2 pr-6 max-[900px]:pr-3 max-[550px]:w-full max-[550px]:pr-0 max-[550px]:mb-5">
-                                            <h3 className="text-4xl mb-5 text-white max-[1350px]:text-3xl max-[1150px]:text-2xl max-[900px]:text-xl max-[900px]:mb-3 max-[650px]:text-lg">OTA reliance ?</h3>
+                                            <h3 className="text-4xl mb-5 text-white max-[1350px]:text-3xl max-[1150px]:text-2xl max-[900px]:text-xl max-[900px]:mb-3 max-[650px]:text-lg">{t('cards.first.heading')}</h3>
 
                                             <div className="mb-3 max-[900px]:mb-1.5">
-                                                <p className="text-lg font-medium text-white max-[1350px]:text-base max-[1150px]:text-sm max-[900px]:font-normal max-[650px]:text-xs">Number of listings</p>
+                                                <p className="text-lg font-medium text-white max-[1350px]:text-base max-[1150px]:text-sm max-[900px]:font-normal max-[650px]:text-xs">{t('cards.first.range1')}</p>
                                                 <div className="flex">
                                                     <div className="w-[calc(100%-100px)] pr-5">
                                                         <input
@@ -194,7 +198,7 @@ const PriceCalculator = () => {
                                             </div>
 
                                             <div className="mb-3 max-[900px]:mb-1.5">
-                                                <p className="text-lg font-medium text-white max-[1350px]:text-base max-[1150px]:text-sm max-[900px]:font-normal max-[650px]:text-xs">Average Daily Rate</p>
+                                                <p className="text-lg font-medium text-white max-[1350px]:text-base max-[1150px]:text-sm max-[900px]:font-normal max-[650px]:text-xs">{t('cards.first.range2')}</p>
                                                 <div className="flex">
                                                     <div className="w-[calc(100%-100px)] pr-5">
                                                         <input
@@ -214,7 +218,7 @@ const PriceCalculator = () => {
                                             </div>
 
                                             <div className="mb-3 max-[900px]:mb-1.5">
-                                                <p className="text-lg font-medium text-white max-[1350px]:text-base max-[1150px]:text-sm max-[900px]:font-normal max-[650px]:text-xs">Occupancy Rate</p>
+                                                <p className="text-lg font-medium text-white max-[1350px]:text-base max-[1150px]:text-sm max-[900px]:font-normal max-[650px]:text-xs">{t('cards.first.range3')}</p>
                                                 <div className="flex">
                                                     <div className="w-[calc(100%-100px)] pr-5">
                                                         <input
@@ -234,7 +238,7 @@ const PriceCalculator = () => {
                                             </div>
 
                                             <div className="mb-3 max-[900px]:mb-1.5">
-                                                <p className="text-lg font-medium text-white max-[1350px]:text-base max-[1150px]:text-sm max-[900px]:font-normal max-[650px]:text-xs">OTA Bookings %</p>
+                                                <p className="text-lg font-medium text-white max-[1350px]:text-base max-[1150px]:text-sm max-[900px]:font-normal max-[650px]:text-xs">{t('cards.first.range4')} %</p>
                                                 <div className="flex">
                                                     <div className="w-[calc(100%-100px)] pr-5">
                                                         <input
@@ -259,22 +263,42 @@ const PriceCalculator = () => {
                                         <div className="w-1/2 pl-6 max-[900px]:pl-3 max-[550px]:w-full max-[550px]:pl-0">
                                             <div className="mb-5 text-white max-[900px]:mb-2.5">
                                                 <h3 className="text-4xl text-blue-400 max-[1350px]:text-3xl max-[1150px]:text-2xl max-[900px]:text-xl max-[650px]:text-lg">${profit.toLocaleString()}</h3>
-                                                <p className="text-lg max-[1150px]:text-base">In Profits Every Year</p>
+                                                <p className="text-lg max-[1150px]:text-base">{t('cards.first.priceProf')}</p>
                                             </div>
 
                                             <div className="mb-4 max-[900px]:mb-2">
-                                                <h4 className="text-3xl text-white mb-2 max-[1350px]:text-2xl max-[1150px]:text-xl max-[900px]:text-lg max-[650px]:text-base max-[650px]:mb-1">Your Occupancy Rate is {occupancy < 60 ? "below" : "above"} the industry average</h4>
+                                                <h4 className="text-3xl text-white mb-2 max-[1350px]:text-2xl max-[1150px]:text-xl max-[900px]:text-lg max-[650px]:text-base max-[650px]:mb-1">
+                                                    <Trans
+                                                        i18nKey={'cards.first.subHeading1'}
+                                                        values={{ occupancySts: occupancy < 60 ? t('cards.first.below') : t('cards.first.above') }}
+                                                    />
+                                                </h4>
                                                 <p className="text-white max-[1150px]:text-sm max-[650px]:text-xs">
-                                                    By increasing your occupancy by just 20% annually with Direct Bookingz, you will lead to{' '}
-                                                    <span className="text-blue-500">${extraRevenue.toLocaleString()} in extra revenue</span>.
+                                                    <Trans
+                                                        i18nKey={'cards.first.para1'}
+                                                        values={{ saveOta: extraRevenue.toLocaleString() }}
+                                                        components={{
+                                                            spanBlue: <span className="text-blue-500" />
+                                                        }}
+                                                    />
                                                 </p>
                                             </div>
 
                                             <div className="mb-4 max-[900px]:mb-2">
-                                                <h4 className="text-3xl text-white mb-2 max-[1350px]:text-2xl max-[1150px]:text-xl max-[900px]:text-lg max-[650px]:text-base max-[650px]:mb-1">Your OTA Bookings are {ota < 80 ? 'below' : 'above'} the industry average</h4>
+                                                <h4 className="text-3xl text-white mb-2 max-[1350px]:text-2xl max-[1150px]:text-xl max-[900px]:text-lg max-[650px]:text-base max-[650px]:mb-1">
+                                                    <Trans
+                                                        i18nKey={'cards.first.subHeading2'}
+                                                        values={{ otaSts: ota < 80 ? t('cards.first.below') : t('cards.first.above') }}
+                                                    />
+                                                </h4>
                                                 <p className="text-white max-[1150px]:text-sm max-[650px]:text-xs">
-                                                    By increasing your direct bookings by just 10% annually, you could save{' '}
-                                                    <span className="text-blue-500">${saveFee.toLocaleString()} in OTA fees</span>.
+                                                    <Trans
+                                                        i18nKey={'cards.first.para2'}
+                                                        values={{ saveOta: extraRevenue.toLocaleString() }}
+                                                        components={{
+                                                            spanBlue: <span className="text-blue-500" />
+                                                        }}
+                                                    />
                                                 </p>
                                             </div>
                                         </div>
@@ -290,7 +314,7 @@ const PriceCalculator = () => {
                                         <InfiniteTicker />
                                     </div>
                                     <div className="w-full max-w-[1100px] mx-auto py-10 px-6 flex flex-col gap-y-[3.75em] max-[1150px]:gap-y-[2.5em] max-[1150px]:py-5 max-[900px]:gap-y-[1.5em] max-[900px]:px-3">
-                                        <h3 className='text-5xl font-black max-[1350px]:text-4xl max-[1150px]:text-3xl max-[900px]:text-2xl'>DIRECT BOOKINGZ TEAM HAS BEEN IN THE GAME FOR 5 STRAIGHT YEARS</h3>
+                                        <h3 className='text-5xl font-black max-[1350px]:text-4xl max-[1150px]:text-3xl max-[900px]:text-2xl'>{t('cards.second.heading')}</h3>
                                         <div className="flex items-center justify-center flex-wrap gap-y-[1.5em] gap-x-[5em] max-[1350px]:gap-y-[1em] max-[1350px]:gap-x-[3.5em] max-[1150px]:gap-y-[0.75em] max-[1150px]:gap-x-[2em]">
                                             {/* <img src="images/logos/logo01.webp" loading="lazy" width="51.5" alt="" className='invert' />
                                             <img src="images/logos/logo02.webp" loading="lazy" alt="" width="77.5" className='invert' />
@@ -320,7 +344,7 @@ const PriceCalculator = () => {
                             <div className="w-full h-full">
                                 <div className="w-full h-full relative pt-[120px] text-center max-[1150px]:pt-[90px] max-[900px]:pt-[40px]">
                                     <h3 className='max-w-[1250px] text-5xl font-black text-white mx-auto relative z-[1] max-[1350px]:text-4xl max-[1150px]:text-3xl max-[900px]:text-2xl'>
-                                        OUR WORK NOT BOUNDED BY BEATIFUL WEBSITES, CREATIVE VISUALS AND MOTION DESIGN
+                                        {t('cards.third.heading')}
                                     </h3>
                                     <StackedBalls />
                                 </div>
@@ -352,8 +376,8 @@ const PriceCalculator = () => {
                         <div ref={addToRefs} className="relative w-[90%] h-[calc(100vh-64px)] flex items-center bg-black rounded-2xl col-[1] row-[1] stackedCard max-[500px]:w-[95%] max-[500px]:h-[550px] lastStackedCard">
                             <div className="w-full h-full">
                                 <div className="w-full h-full flex flex-col items-center justify-center text-center text-white">
-                                    <h3 className='max-w-[900px] text-5xl font-black mb-7 relative z-[1] max-[1350px]:text-4xl max-[1150px]:text-3xl max-[900px]:text-2xl'>AND THIS IS JUST ONLY SMALL PART OF OUR PRESENTATION</h3>
-                                    <p className='text-2xl font-bold mb-5 relative z-[1] max-[1150px]:text-xl max-[900px]:text-lg'>OPEN FULL PDF VERSION</p>
+                                    <h3 className='max-w-[900px] text-5xl font-black mb-7 relative z-[1] max-[1350px]:text-4xl max-[1150px]:text-3xl max-[900px]:text-2xl'>{t('cards.fifth.heading')}</h3>
+                                    <p className='text-2xl font-bold mb-5 relative z-[1] max-[1150px]:text-xl max-[900px]:text-lg'>{t('cards.fifth.openPdfText')}</p>
                                     <button className='size-16 bg-white rounded-full flex items-center justify-center cursor-pointer relative z-[1] duration-300 scale-100 hover:bg-blue-500 hover:scale-110 max-[900px]:size-10'>
                                         <img src="images/icons/downloadIcon.gif" alt="" className='w-12 max-[900px]:w-8' />
                                     </button>

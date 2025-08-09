@@ -9,6 +9,7 @@ import PriceCalculator from "@/components/sections/PriceCalculator";
 import Portfolio from "@/components/sections/Portfolio";
 import Contact from "@/components/sections/Contact";
 import HeroFirstBgVideo from "@/components/HeroFirstBgVideo";
+import { Trans, useTranslation } from "react-i18next";
 
 
 const videoUrl = [
@@ -36,6 +37,8 @@ export default function Home() {
   const [videoLoaded, setVideoLoaded] = useState(false)
   const [videoLoaded2, setVideoLoaded2] = useState(false)
   const [videoLoaded3, setVideoLoaded3] = useState(false)
+
+  const { t } = useTranslation("common");
 
   // useEffect(() => {
   //   const timer = setTimeout(() => {
@@ -111,6 +114,7 @@ export default function Home() {
   // }
 
 
+
   return (
     <div
       className={`
@@ -124,7 +128,7 @@ export default function Home() {
         <section id="hero" className="grid grid-rows-[0.5fr_0.5fr_1fr] min-h-screen max-h-screen max-[650px]:grid-rows-[0.5fr_1.5fr] relative overflow-hidden">
           <div className="p-6 row-[2/3] max-[450px]:p-3">
             <h2 className="text-5xl font-bold text-center uppercase leading-[1.2] max-[1800px]:text-4xl max-[1350px]:text-3xl max-[900px]:text-2xl max-[650px]:text-3xl max-[650px]:text-start max-[450px]:text-[28px]">
-              Stop paying fees. Start owning your bookings.
+              {/* Stop paying fees. Start owning your bookings.
               <br />
               <span
                 onMouseEnter={() => handleMouseEnter(1)}
@@ -165,7 +169,46 @@ export default function Home() {
               >
                 WEB DEVELOPMENT
               </span> AND putting
-              <br /> power back in the hands of hosts and property managers.
+              <br /> power back in the hands of hosts and property managers. */}
+              <Trans
+                i18nKey="hero.main"
+                components={{
+                  brTag: <br />,
+                  hoverOne: <span
+                    onMouseEnter={() => handleMouseEnter(1)}
+                    onMouseLeave={() => handleMouseLeave(1)}
+                    className={`relative whitespace-nowrap cursor-pointer duration-300 z-10 hover:z-50
+                            before:w-full before:h-[4px] before:bg-black before:absolute
+                            before:content-[''] before:bottom-[-2px] before:left-0 before:delay-200 before:duration-300 hover:before:w-[0%]
+                            after:w-[calc(100%+40px)] after:h-[calc(100%+30px)] after:rounded-lg after:bg-yellow-300 after:absolute
+                            after:content-[''] after:top-1/2 after:left-1/2 after:-translate-y-1/2 after:-translate-x-1/2 after:-z-[1]
+                            after:opacity-0 after:delay-200 after:duration-300 after:scale-75 hover:after:opacity-100 hover:after:scale-100
+                            max-[900px]:before:h-[3px]`}
+                  />,
+                  hoverTwo: <span
+                    onMouseEnter={() => handleMouseEnter(2)}
+                    onMouseLeave={() => handleMouseLeave(2)}
+                    className={`relative whitespace-nowrap cursor-pointer duration-300 z-10 hover:z-50 
+                            before:w-full before:h-[4px] before:bg-black before:absolute
+                            before:content-[''] before:bottom-[-2px] before:left-0 before:delay-200 before:duration-300 hover:before:w-[0%]
+                            after:w-[calc(100%+40px)] after:h-[calc(100%+30px)] after:rounded-lg after:bg-orange-500 after:absolute
+                            after:content-[''] after:top-1/2 after:left-1/2 after:-translate-y-1/2 after:-translate-x-1/2 after:-z-[1]
+                            after:opacity-0 after:delay-200 after:duration-300 after:scale-75 hover:after:opacity-100 hover:after:scale-100
+                            max-[900px]:before:h-[3px]`}
+                  />,
+                  hoverThree: <span
+                    onMouseEnter={() => handleMouseEnter(3)}
+                    onMouseLeave={() => handleMouseLeave(3)}
+                    className={`relative whitespace-nowrap cursor-pointer duration-300 z-10 hover:z-50 
+                            before:w-full before:h-[4px] before:bg-black before:absolute
+                            before:content-[''] before:bottom-[-2px] before:left-0 before:delay-200 before:duration-300 hover:before:w-[0%]
+                            after:w-[calc(100%+40px)] after:h-[calc(100%+30px)] after:rounded-lg after:bg-blue-500 after:absolute
+                            after:content-[''] after:top-1/2 after:left-1/2 after:-translate-y-1/2 after:-translate-x-1/2 after:-z-[1]
+                            after:opacity-0 after:delay-200 after:duration-300 after:scale-75 hover:after:opacity-100 hover:after:scale-100
+                            max-[900px]:before:h-[3px]`}
+                  />
+                }}
+              />
             </h2>
           </div>
 

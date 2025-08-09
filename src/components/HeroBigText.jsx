@@ -1,9 +1,15 @@
 'use client'
+import { t } from 'i18next';
 import React, { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next';
 
 const HeroBigText = () => {
     const textRef = useRef([])
     const barRef = useRef(null);
+
+
+
+    const { t } = useTranslation()
 
 
     const [time, setTime] = useState('');
@@ -114,12 +120,12 @@ const HeroBigText = () => {
                         <p className='w-[250px] max-[950px]:w-[200px]'>{location || 'Loading location...'}</p>
                     </div>
                     <div className='flex items-center gap-28 font-medium px-3 max-[1250px]:gap-16 max-[1050px]:gap-10 max-[1050px]:text-sm max-[950px]:gap-5 max-[950px]:text-xs'>
-                        <p>DIRECT RENTALS</p>
+                        <p>{t('hero.small')}</p>
                     </div>
                     <div className='flex items-center gap-28 font-medium max-[1250px]:gap-16 max-[1050px]:gap-10 max-[1050px]:text-sm max-[950px]:gap-5 max-[950px]:text-xs'>
-                        <p><a href='https://behance.net'>YOUTUBE</a></p>
-                        <p><a href='https://instagram.com'>INSTAGRAM</a></p>
-                        <p><a href='https://facebook.com'>FACEBOOK</a></p>
+                        <p><a href='https://www.youtube.com/@DirectBookingz'>YOUTUBE</a></p>
+                        <p><a href='https://www.instagram.com/bookingz01/'>INSTAGRAM</a></p>
+                        <p><a href='https://www.facebook.com/people/Direct-Bookingz/61579162591943/'>FACEBOOK</a></p>
                     </div>
                 </div>
                 <div className="w-full row-[3/-1] flex justify-between relative">

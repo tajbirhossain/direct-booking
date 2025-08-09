@@ -1,0 +1,73 @@
+{
+    "header": {
+        "showMenu": "MOSTRA MENU",
+        "hideMenu": "NASCONDI MENU",
+        "menus": [
+            "Home",
+            "Calcolatore prezzi",
+            "Chi siamo",
+            "Lavori selezionati",
+            "Contatti"
+        ]
+    },
+    "hero": {
+        "main": "Smetti di pagare commissioni. Inizia a controllare le tue prenotazioni.<brTag /> <hoverOne>DESIGN E BRANDING</hoverOne>, <hoverTwo>PUBBLICITÀ</hoverTwo>, <hoverThree>SVILUPPO WEB</hoverThree> e restituendo<brTag /> il potere nelle mani di host e gestori di proprietà.",
+        "small": "AFFITTI DIRETTI"
+    },
+    "cards": {
+        "first": {
+            "heading": "Dipendenza dalle OTA?",
+            "range1": "Numero di annunci",
+            "range2": "Tariffa media giornaliera",
+            "range3": "Tasso di occupazione",
+            "range4": "Tasso di prenotazioni OTA",
+            "priceProf": "Profitti annuali",
+            "subHeading1": "Il tuo tasso di occupazione è {{occupancySts}} della media del settore",
+            "para1": "Aumentando il tasso di occupazione di appena il 20% all’anno con Direct Bookingz, otterrai <spanBlue>${{extraRevenue}} di entrate aggiuntive</spanBlue>.",
+            "subHeading2": "Le tue prenotazioni OTA sono {{otaSts}} della media del settore",
+            "para2": "Aumentando le tue prenotazioni dirette di appena il 10% all’anno, potresti risparmiare <spanBlue>${{saveOta}} in commissioni OTA</spanBlue>.",
+            "below": "sotto",
+            "above": "sopra"
+        },
+        "second": {
+            "heading": "IL TEAM DI DIRECT BOOKINGZ È NEL SETTORE DA 5 ANNI CONSECUTIVI",
+            "tickers": [
+                "VILLE",
+                "CABINE",
+                "COTTAGE",
+                "APPARTAMENTI E CONDOMINI",
+                "CASE SULLA SPIAGGIA",
+                "CASE SUGLI ALBERI",
+                "HOUSEBOAT",
+                "VILLE DI LUSSO",
+                "CHALET",
+                "OSTELLI",
+                "APPARTAMENTI CONDIVISI"
+            ]
+        },
+        "third": {
+            "heading": "IL NOSTRO LAVORO NON SI LIMITA A SITI WEB BELLISSIMI, CONTENUTI CREATIVI E MOTION DESIGN"
+        },
+        "fifth": {
+            "heading": "E QUESTO È SOLO UNA PICCOLA PARTE DELLA NOSTRA PRESENTAZIONE",
+            "openPdfText": "APRI LA VERSIONE COMPLETA IN PDF"
+        }
+    },
+    "portfolio": {
+        "subHeading": "IL MEGLIO DI",
+        "heading": "I NOSTRI LAVORI"
+    },
+    "contact": {
+        "subHeading": "Restiamo in contatto!",
+        "heading": "Hai una domanda o vuoi semplicemente salutare?",
+        "inputs": {
+            "name": "Il tuo nome",
+            "email": "Il tuo indirizzo email",
+            "phone": "Il tuo numero di telefono",
+            "service": "Scegli il servizio",
+            "message": "Il tuo messaggio..."
+        },
+        "submit": "Invia",
+        "submitting": "Invio in corso..."
+    }
+}

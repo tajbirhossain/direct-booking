@@ -1,0 +1,73 @@
+{
+    "header": {
+        "showMenu": "MENÜ ANZEIGEN",
+        "hideMenu": "MENÜ AUSBLENDEN",
+        "menus": [
+            "Startseite",
+            "Preisrechner",
+            "Über uns",
+            "Ausgewählte Arbeiten",
+            "Kontakt"
+        ]
+    },
+    "hero": {
+        "main": "Hören Sie auf, Gebühren zu zahlen. Beginnen Sie, Ihre Buchungen selbst zu besitzen.<brTag /> <hoverOne>DESIGN UND BRANDING</hoverOne>, <hoverTwo>WERBUNG</hoverTwo>, <hoverThree>WEBENTWICKLUNG</hoverThree> und geben Sie<brTag /> die Kontrolle zurück in die Hände von Gastgebern und Immobilienverwaltern.",
+        "small": "DIREKTVERMIETUNGEN"
+    },
+    "cards": {
+        "first": {
+            "heading": "Abhängigkeit von OTAs?",
+            "range1": "Anzahl der Inserate",
+            "range2": "Durchschnittlicher Tagespreis",
+            "range3": "Belegungsrate",
+            "range4": "OTA-Buchungsrate",
+            "priceProf": "Jährlicher Gewinn",
+            "subHeading1": "Ihre Belegungsrate liegt {{occupancySts}} dem Branchendurchschnitt",
+            "para1": "Wenn Sie Ihre Belegungsrate jährlich um nur 20 % mit Direct Bookingz erhöhen, führt das zu <spanBlue>${{extraRevenue}} zusätzlichem Umsatz</spanBlue>.",
+            "subHeading2": "Ihre OTA-Buchungen liegen {{otaSts}} dem Branchendurchschnitt",
+            "para2": "Wenn Sie Ihre Direktbuchungen jährlich nur um 10 % erhöhen, könnten Sie <spanBlue>${{saveOta}} an OTA-Gebühren sparen</spanBlue>.",
+            "below": "unter",
+            "above": "über"
+        },
+        "second": {
+            "heading": "DAS DIRECT BOOKINGZ TEAM IST SEIT 5 JAHREN IM GESCHÄFT",
+            "tickers": [
+                "VILLEN",
+                "HÜTTEN",
+                "FERIENHÄUSER",
+                "WOHNUNGEN & CONDOS",
+                "STRANDHÄUSER",
+                "BAUMHÄUSER",
+                "HAUSBOOTE",
+                "VILLEN MIT GRUNDSTÜCK",
+                "CHALETS",
+                "HOSTELS",
+                "GEMEINSCHAFTSWOHNUNGEN"
+            ]
+        },
+        "third": {
+            "heading": "UNSERE ARBEIT BESCHRÄNKT SICH NICHT NUR AUF SCHÖNE WEBSEITEN, KREATIVE VISUALS UND MOTION DESIGN"
+        },
+        "fifth": {
+            "heading": "UND DAS IST NUR EIN KLEINER TEIL UNSERER PRÄSENTATION",
+            "openPdfText": "VOLLE PDF-VERSION ÖFFNEN"
+        }
+    },
+    "portfolio": {
+        "subHeading": "DAS BESTE VON",
+        "heading": "UNSERE ARBEITEN"
+    },
+    "contact": {
+        "subHeading": "Lassen Sie uns in Kontakt treten!",
+        "heading": "Haben Sie eine Frage oder möchten Sie einfach Hallo sagen?",
+        "inputs": {
+            "name": "Ihr Name",
+            "email": "Ihre E-Mail-Adresse",
+            "phone": "Ihre Telefonnummer",
+            "service": "Dienstleistung wählen",
+            "message": "Ihre Nachricht..."
+        },
+        "submit": "Absenden",
+        "submitting": "Wird gesendet..."
+    }
+}

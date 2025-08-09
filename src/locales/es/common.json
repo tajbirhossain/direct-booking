@@ -1,0 +1,73 @@
+{
+    "header": {
+        "showMenu": "MOSTRAR MENÚ",
+        "hideMenu": "OCULTAR MENÚ",
+        "menus": [
+            "Inicio",
+            "Calculadora de precios",
+            "Sobre nosotros",
+            "Trabajos seleccionados",
+            "Contacto"
+        ]
+    },
+    "hero": {
+        "main": "Deja de pagar comisiones. Empieza a controlar tus reservas.<brTag /> <hoverOne>DISEÑO Y MARCA</hoverOne>, <hoverTwo>PUBLICIDAD</hoverTwo>, <hoverThree>DESARROLLO WEB</hoverThree> y devolviendo<brTag /> el poder a los anfitriones y administradores de propiedades.",
+        "small": "ALQUILERES DIRECTOS"
+    },
+    "cards": {
+        "first": {
+            "heading": "¿Dependencia de las OTA?",
+            "range1": "Número de anuncios",
+            "range2": "Tarifa diaria promedio",
+            "range3": "Tasa de ocupación",
+            "range4": "Tasa de reservas OTA",
+            "priceProf": "Ganancias anuales",
+            "subHeading1": "Su tasa de ocupación está {{occupancySts}} del promedio de la industria",
+            "para1": "Al aumentar su ocupación en solo un 20% anual con Direct Bookingz, generará <spanBlue>${{extraRevenue}} en ingresos adicionales</spanBlue>.",
+            "subHeading2": "Sus reservas OTA están {{otaSts}} del promedio de la industria",
+            "para2": "Al aumentar sus reservas directas en solo un 10% anual, podría ahorrar <spanBlue>${{saveOta}} en comisiones de OTA</spanBlue>.",
+            "below": "por debajo de",
+            "above": "por encima de"
+        },
+        "second": {
+            "heading": "EL EQUIPO DE DIRECT BOOKINGZ LLEVA 5 AÑOS SEGUIDOS EN EL MERCADO",
+            "tickers": [
+                "VILLAS",
+                "CABAÑAS",
+                "COTTAGES",
+                "APARTAMENTOS Y CONDOS",
+                "CASAS DE PLAYA",
+                "CASAS EN LOS ÁRBOLES",
+                "CASAS FLOTANTES",
+                "MANSIONES",
+                "CHALETS",
+                "HOSTALES",
+                "APARTAMENTOS COMPARTIDOS"
+            ]
+        },
+        "third": {
+            "heading": "NUESTRO TRABAJO NO SE LIMITA A PÁGINAS WEB HERMOSAS, VISUALES CREATIVOS Y DISEÑO EN MOVIMIENTO"
+        },
+        "fifth": {
+            "heading": "Y ESTO ES SOLO UNA PEQUEÑA PARTE DE NUESTRA PRESENTACIÓN",
+            "openPdfText": "ABRIR VERSIÓN COMPLETA EN PDF"
+        }
+    },
+    "portfolio": {
+        "subHeading": "LO MEJOR DE",
+        "heading": "NUESTROS TRABAJOS"
+    },
+    "contact": {
+        "subHeading": "¡Conectemos!",
+        "heading": "¿Tienes una pregunta o solo quieres saludar?",
+        "inputs": {
+            "name": "Tu nombre",
+            "email": "Tu correo electrónico",
+            "phone": "Tu número de teléfono",
+            "service": "Elegir servicio",
+            "message": "Tu mensaje..."
+        },
+        "submit": "Enviar",
+        "submitting": "Enviando..."
+    }
+}

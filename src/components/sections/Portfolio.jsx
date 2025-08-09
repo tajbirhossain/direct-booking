@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslation } from 'react-i18next';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,31 +27,34 @@ const Portfolio = () => {
   const scrollObserverRef = useRef(null);
 
 
+  const { t } = useTranslation()
+
+
   const projects = [
     {
       name: ["NYC", "RENTALS"],
       tag: ["BRAND", "IDENTITY"],
       year: "2023",
-      link: "https://www.behance.net/gallery/131077809/Polemica-online-gaming-platform-rebranding"
+      link: "/case-studies/nycholidayrentals"
     },
     {
       name: ["MIAMI", "STAYS"],
       tag: ["DIGITAL", "BRANDING"],
       year: "2024",
-      link: "https://www.behance.net/gallery/170376729/Units-Autonomous-Community"
+      link: "/case-studies/miamistays"
     },
     {
       // name: ["BIDAPP", "SDK"],
       name: ["SEARCH", "STAY"],
       tag: ["DIGITAL", "STRATEGY"],
       year: "2020",
-      link: "https://www.behance.net/gallery/199373991/SDK-Platform-bidapp-UXUI-Brand-Identity"
+      link: "/case-studies/searchastay"
     },
     {
       name: ["FRENCH", "RIVIERA"],
       tag: ["IDENTITY", "WEBSITE"],
       year: "2023",
-      link: "https://www.behance.net/gallery/145220925/Urban-Amenities-branding-for-modern-furniture-company"
+      link: "/case-studies/frenchriviera"
     },
     // {
     //   name: ["INDIEVID", "LABEL"],
@@ -485,8 +489,8 @@ const Portfolio = () => {
     <section id='portfolio' ref={sectionRef} className="portfolio h-screen relative bg-[#f3f3ef] text-[#060606] overflow-hidden">
       <div ref={welcomeRef} className="portfolio-welcome absolute inset-0 flex items-center justify-center z-10">
         <div className="portfolio-welcome-content text-center relative overflow-hidden">
-          <div className="heading-label text-sm font-medium mb-2">BEST OF</div>
-          <h1 className="text-[5em] font-black leading-[1] -tracking-[1.5px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">OUR WORKS</h1>
+          <div className="heading-label text-sm font-medium mb-2">{t('portfolio.subHeading')}</div>
+          <h1 className="text-[5em] font-black leading-[1] -tracking-[1.5px] max-[1350px]:text-[4em] max-[1150px]:text-[3em] max-[900px]:text-[2em] max-[550px]:text-[3em]">{t('portfolio.heading')}</h1>
           <div ref={wallRef} className="welcome-wall absolute inset-0 bg-[#f3f3ef]"></div>
         </div>
       </div>

@@ -1,26 +1,14 @@
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function InfiniteTicker() {
-  const items = useMemo(
-    () => [
-      // "RETAIL",
-      // "START UP",
-      // "DIGITAL",
-      "VILLAS",
-      "CABINS",
-      "COTTAGES",
-      "APARTMENTS & CONDOS",
-      "BEACH HOUSES",
-      "TREE HOUSES",
-      "HOUSEBOATS",
-      "MANSIONS",
-      "CHALETS",
-      "HOSTELS",
-      "SHARED APARTMENTS"
+  const { t } = useTranslation()
 
-    ],
-    []
+  const itemsData = t('cards.second.tickers', { returnObjects: true })
+  const items = useMemo(
+    () => itemsData, []
   );
+  
 
   const scrollingItems = [...items, ...items];
 
