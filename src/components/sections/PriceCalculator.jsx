@@ -169,7 +169,7 @@ const PriceCalculator = () => {
                 <div className="relative w-full h-[500vh]">
                     <div className="relative grid grid-cols-[1fr] grid-rows-[1fr] gap-x-0 gap-y-0 pt-[2em] pb-[2em] items-center justify-items-center h-full max-h-screen">
                         <div id='priceCalculator' ref={addToRefs} className="relative w-[90%] h-[calc(100vh-64px)] flex items-center bg-black rounded-2xl col-[1] row-[1] stackedCard max-[500px]:w-[95%] max-[500px]:h-[550px] overflow-hidden" >
-                            <video muted loop autoPlay className='w-full h-full absolute top-0 left-0 object-cover'>
+                            <video muted loop autoPlay playsInline controls={false} className='w-full h-full absolute top-0 left-0 object-cover'>
                                 <source src="/videos/calculator-use-2.mp4" type="video/mp4" />
                             </video>
                             {/* <div className="w-full h-full absolute top-0 left-0 bg-[rgba(90,90,90,0.28)]" /> */}
@@ -360,8 +360,8 @@ const PriceCalculator = () => {
                                 </h3>
                                 <AutoScrollCards />
                             </div> */}
-                                <img src="/images/customer-review.png" alt="" className='w-full h-full object-cover' />
-                                <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
+                                <img src="/images/customer-review.png" alt="" className='w-full h-full object-cover max-[800px]:object-contain' />
+                                {/* <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-black to-transparent pointer-events-none z-10" /> */}
                                 <div className="size-[183px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-full max-[1150px]:size-[120px]">
                                     <button
                                         onClick={onShowVideoModal}

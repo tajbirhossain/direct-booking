@@ -6,15 +6,22 @@ import { useTranslation } from 'react-i18next';
 const HeroBigText = () => {
     const textRef = useRef([])
     const barRef = useRef(null);
-
-
-
     const { t } = useTranslation()
-
 
     const [time, setTime] = useState('');
     const [location, setLocation] = useState('');
     const [timezone, setTimezone] = useState('');
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+    
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsSmallScreen(window.innerWidth <= 650);
+        };
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+        return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
 
     useEffect(() => {
         const fetchLocation = async () => {
@@ -31,7 +38,6 @@ const HeroBigText = () => {
                 console.error('Failed to fetch location:', err);
             }
         };
-
         fetchLocation();
     }, []);
 
@@ -48,8 +54,7 @@ const HeroBigText = () => {
                 timeZone: timezone,
                 hour12: false,
             };
-            const formattedTime = new Intl.DateTimeFormat('en-US', options).format(now);
-            setTime(formattedTime.toUpperCase());
+            setTime(new Intl.DateTimeFormat('en-US', options).format(now).toUpperCase());
         };
 
         updateClock();
@@ -57,8 +62,9 @@ const HeroBigText = () => {
         return () => clearInterval(interval);
     }, [timezone]);
 
-
     const handleHover = (e) => {
+        if (isSmallScreen) return;
+
         const hoveredDiv = e.currentTarget;
         const bar = barRef.current;
 
@@ -69,14 +75,10 @@ const HeroBigText = () => {
                 item.style.transform = "scale(1.1)";
                 item.style.transition = "transform 0.3s ease";
                 img.style.opacity = "1";
-                img.style.bottom = "10px"
+                img.style.bottom = "10px";
 
-
-                const parentRect = item.parentElement.getBoundingClientRect();
-                const itemRect = item.getBoundingClientRect();
-
-                const barLeft = item.offsetLeft + item.offsetWidth / 2 - 90
-                const barTop = item.offsetTop + item.offsetHeight - 4
+                const barLeft = item.offsetLeft + item.offsetWidth / 2 - 90;
+                const barTop = item.offsetTop + item.offsetHeight - 4;
 
                 bar.style.left = `${barLeft}px`;
                 bar.style.top = `${barTop + 15}px`;
@@ -84,46 +86,43 @@ const HeroBigText = () => {
             } else {
                 item.style.transform = "scale(1)";
                 img.style.opacity = "0.2";
-                img.style.bottom = "-40px"
+                img.style.bottom = "-40px";
             }
         });
+    };
 
-    }
-    const handleLeave = (el) => {
+    const handleLeave = () => {
+        if (isSmallScreen) return;
+
         textRef.current.forEach((item) => {
-            const img = item.querySelector("img")
-            item.style.transform = "scale(1)"
-            img.style.opacity = "1"
-            img.style.bottom = "0px"
-        })
+            const img = item.querySelector("img");
+            item.style.transform = "scale(1)";
+            img.style.opacity = "1";
+            img.style.bottom = "0px";
+        });
 
-
-        const bar = barRef.current;
-        bar.style.opacity = "0";
-    }
+        barRef.current.style.opacity = "0";
+    };
 
     const addToRefs = (el) => {
         if (el && !textRef.current.includes(el)) {
-            textRef.current.push(el)
+            textRef.current.push(el);
         }
-    }
+    };
     return (
         <>
-            <div className='w-full p-6 row-[3/-1] flex flex-col justify-end relative max-[650px]:hidden'>
-                {/* <div className="flex items-center">
-
-            </div> */}
+            <div className='w-full p-6 row-[3/-1] flex flex-col justify-end relative max-[650px]:py-6 max-[650px]:px-1'>
                 <div className="w-full h-6 absolute bottom-0 left-0 backdrop-blur-md bg-[rgba(255,255,255,0.2)] z-[1]" />
                 <div className="w-full flex items-center justify-between mb-3 max-[1050px]:mb-2 max-[750px]:hidden">
                     <div className='flex items-center gap-28 font-medium max-[1250px]:gap-16 max-[1050px]:gap-10 max-[1050px]:text-sm max-[950px]:gap-5 max-[950px]:text-xs'>
                         <p className='w-[135px] max-[950px]:w-[110px]'>{time || 'Loading time...'}</p>
                         <p className='w-[250px] max-[950px]:w-[200px]'>{location || 'Loading location...'}</p>
                     </div>
-                    <div className='flex items-center gap-28 font-medium px-3 max-[1250px]:gap-16 max-[1050px]:gap-10 max-[1050px]:text-sm max-[950px]:gap-5 max-[950px]:text-xs'>
+                    {/* <div className='flex items-center gap-28 font-medium px-3 max-[1250px]:gap-16 max-[1050px]:gap-10 max-[1050px]:text-sm max-[950px]:gap-5 max-[950px]:text-xs'>
                         <p>{t('hero.small')}</p>
-                    </div>
+                    </div> */}
                     <div className='flex items-center gap-28 font-medium max-[1250px]:gap-16 max-[1050px]:gap-10 max-[1050px]:text-sm max-[950px]:gap-5 max-[950px]:text-xs'>
-                        <p><a href='https://www.youtube.com/@DirectBookingz'>YOUTUBE</a></p>
+                        {/* <p><a href='https://www.youtube.com/@DirectBookingz'>YOUTUBE</a></p> */}
                         <p><a href='https://www.instagram.com/bookingz01/'>INSTAGRAM</a></p>
                         <p><a href='https://www.facebook.com/people/Direct-Bookingz/61579162591943/'>FACEBOOK</a></p>
                     </div>
@@ -181,30 +180,16 @@ const HeroBigText = () => {
                         <img src="/images/letters-medium/G.svg" alt="" className="h-full" />
                     </div>
                     <div ref={addToRefs} className="bigTextHolder h-[calc(100vw/11.5)]" onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-                        {/* <img src="/images/letters-medium/S.svg" alt="" className="h-full" /> */}
                         <img src="/images/letters-medium/Z.svg" alt="" className="h-full" />
                     </div>
                 </div>
-                {/* <div className="w-full flex justify-between items-center">
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">D</span>
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">I</span>
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">R</span>
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">E</span>
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">C</span>
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">T</span>
-                <span className="w-[calc(100vw/80)]" />
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">B</span>
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">O</span>
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">O</span>
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">K</span>
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">I</span>
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">N</span>
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">G</span>
-                <span className="text-[calc(100vw/9)] font-medium leading-[1] cursor-pointer tracking-[-7px]">S</span>
-            </div> */}
             </div>
 
-            <img src="/images/DIRECT-BOOKINGZ-stroke.svg" alt="" className='w-[1200px] max-w-[1200px] absolute bottom-10 left-1/2 -translate-x-1/2 -z-[1] opacity-10 max-[500px]:w-[800px] hidden max-[650px]:block' />
+            {/* <img src="/images/DIRECT-BOOKINGZ-stroke.svg" alt="" className='w-[1200px] max-w-[1200px] absolute bottom-10 left-1/2 -translate-x-1/2 -z-[1] opacity-10 max-[500px]:w-[800px] hidden max-[650px]:block' /> */}
+            {/* <div>
+                <h2 className='text-5xl'>DIRECT</h2>
+                <h2 className='text-5xl'>BOOKINGZ</h2>
+            </div> */}
         </>
     )
 }
