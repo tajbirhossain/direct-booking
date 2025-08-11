@@ -60,10 +60,10 @@ const LanguageSwitcher = () => {
         >
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="h-10 w-full rounded-lg pl-2 pr-4 border border-gray-500 bg-[#ff00] text-left cursor-pointer focus:outline-none flex items-center max-[700px]:h-8 max-[700px]:rounded-md max-[700px]:pl-1 max-[700px]:pr-2 max-[700px]:text-sm"
+                className="h-10 w-full text-[#3a3a3a] rounded-lg pl-2 pr-4 border border-gray-500 bg-[#ff00] text-left cursor-pointer focus:outline-none flex items-center max-[700px]:h-8 max-[700px]:rounded-md max-[700px]:pl-1 max-[700px]:pr-2 max-[700px]:text-sm"
             >
                 <img
-                    src="/images/icons/globe.png"
+                    src="/images/icons/globe-gray.png"
                     alt="globe icon"
                     className="w-4 mr-2 max-[700px]:w-3 max-[700px]:mr-1.5"
                 />

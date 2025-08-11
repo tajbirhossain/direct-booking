@@ -117,7 +117,7 @@ const HeroFirstBgVideo = ({ videoLoaded }) => {
             <video
                 ref={videoRef}
                 className="max-w-[700px] w-full h-full object-cover absolute top-0 left-1/2 -translate-x-1/2 transition-opacity duration-300"
-                src="/videos/design-and-branding-3.mp4"
+                src="/videos/design-and-branding-1-3.mp4"
                 muted
                 playsInline
                 disablePictureInPicture

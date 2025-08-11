@@ -6,6 +6,7 @@ import StackedBalls from '../StackedBalls'
 import AutoScrollCards from '../AutoScrollCards'
 import VideoModal from '../VideoModal'
 import { Trans, useTranslation } from 'react-i18next'
+import Link from 'next/link'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -378,9 +379,11 @@ const PriceCalculator = () => {
                                 <div className="w-full h-full flex flex-col items-center justify-center text-center text-white">
                                     <h3 className='max-w-[900px] text-5xl font-black mb-7 relative z-[1] max-[1350px]:text-4xl max-[1150px]:text-3xl max-[900px]:text-2xl'>{t('cards.fifth.heading')}</h3>
                                     <p className='text-2xl font-bold mb-5 relative z-[1] max-[1150px]:text-xl max-[900px]:text-lg'>{t('cards.fifth.openPdfText')}</p>
-                                    <button className='size-16 bg-white rounded-full flex items-center justify-center cursor-pointer relative z-[1] duration-300 scale-100 hover:bg-blue-500 hover:scale-110 max-[900px]:size-10'>
-                                        <img src="images/icons/downloadIcon.gif" alt="" className='w-12 max-[900px]:w-8' />
-                                    </button>
+                                    <a href={'/our-services-pdf'} target="_blank" rel="noopener noreferrer">
+                                        <button className='size-16 bg-white rounded-full flex items-center justify-center cursor-pointer relative z-[1] duration-300 scale-100 hover:bg-blue-500 hover:scale-110 max-[900px]:size-10'>
+                                            <img src="images/icons/right.png" alt="" className='w-8 max-[900px]:w-8' />
+                                        </button>
+                                    </a>
                                     <div className="w-full h-full absolute top-0 left-0 right-0 bottom-0 overflow-hidden rounded-2xl flex flex-col items-center justify-center text-center">
                                         <div ref={endBackgroundRef} className="w-[100vh] h-screen translate-y-[60%] bg-[#ff9fc4] rounded-[50%] endBackground" />
                                     </div>

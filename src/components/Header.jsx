@@ -116,7 +116,7 @@ const Header = () => {
 
                     <div className="relative">
                         <div className="absolute -top-[8px] -right-[8px] bg-[#FFD73B] rounded-lg duration-500" style={{ width: showBg ? (typeof window !== 'undefined' && screenWidth > 500 ? "380px" : "285px") : (typeof window !== 'undefined' && screenWidth > 500 ? "132px" : "108px"), height: showBg ? (typeof window !== 'undefined' && screenWidth > 700 ? "430px" : "385px") : (typeof window !== 'undefined' && screenWidth > 500 ? "42px" : "35px"), opacity: btnHovered || showBg ? 1 : 0 }} />
-                        <button className='min-w-[118px] menuButton text-xl font-medium cursor-pointer -tracking-[1px] max-[700px]:text-base max-[500px]:text-sm max-[500px]:min-w-[95px]' data-hover={showBg ? "HIDE MENU" : "SHOW MENU"} onClick={handleMenu} onMouseEnter={() => setBtnHovered(true)} onMouseLeave={() => setBtnHovered(false)}>
+                        <button className='min-w-[118px] menuButton text-xl font-medium text-[#3a3a3a] cursor-pointer -tracking-[1px] max-[700px]:text-base max-[500px]:text-sm max-[500px]:min-w-[95px]' data-hover={showBg ? "HIDE MENU" : "SHOW MENU"} onClick={handleMenu} onMouseEnter={() => setBtnHovered(true)} onMouseLeave={() => setBtnHovered(false)}>
                             <span>{showBg ? "HIDE MENU" : "SHOW MENU"}</span>
                         </button>
                         <div className="w-[355px] h-[480px] absolute top-5 right-0 pr-4 duration-300 max-[500px]:w-[250px] max-[500px]:h-[340px]" style={{ opacity: isMenuActive ? 1 : 0, pointerEvents: isMenuActive ? "auto" : "none" }}>

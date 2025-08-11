@@ -26,7 +26,7 @@ const videoUrl = [
   {
     // webm: "/videos/web-portfolio.webm",
     // mp4: "/videos/web-portfolio.mp4",
-    mp4: "/videos/web-development-4.mp4"
+    mp4: "/videos/web-development-2.mp4"
   },
 ]
 
@@ -127,7 +127,7 @@ export default function Home() {
       <main>
         <section id="hero" className="grid grid-rows-[0.5fr_0.5fr_1fr] min-h-screen max-h-screen max-[650px]:grid-rows-[0.5fr_1.5fr] relative overflow-hidden">
           <div className="p-6 row-[2/3] max-[450px]:p-3">
-            <h2 className="text-5xl font-bold text-center uppercase leading-[1.2] max-[1800px]:text-4xl max-[1350px]:text-3xl max-[900px]:text-2xl max-[650px]:text-3xl max-[650px]:text-start max-[450px]:text-[28px]">
+            <h2 className="text-5xl font-bold text-center uppercase leading-[1.2] max-[1800px]:text-4xl max-[1350px]:text-3xl max-[900px]:text-2xl max-[650px]:text-3xl max-[650px]:text-start max-[450px]:text-[25px]">
               {/* Stop paying fees. Start owning your bookings.
               <br />
               <span

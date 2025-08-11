@@ -71,9 +71,27 @@ const Contact = () => {
     }
     setIsSubmitting(true);
 
+    // try {
+    //   const response = await fetch('https://script.google.com/macros/s/AKfycbz0t6lDYyt0RMADvFj6zhMrWOBmLjr_ZJYxZRk50vOmTMTQJ6MHZBniGdGvmy8Z4WGx/exec', {
+    //     method: 'POST',
+    //     body: JSON.stringify(formData)
+    //   });
+
+    //   if (response.ok) {
+    //     alert("Message sent successfully!");
+    //     setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+    //   } else {
+    //     alert("Something went wrong.");
+    //   }
+    // } catch (error) {
+    //   alert("Error sending message.");
+    // } finally {
+    //   setIsSubmitting(false);
+    // }
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbz0t6lDYyt0RMADvFj6zhMrWOBmLjr_ZJYxZRk50vOmTMTQJ6MHZBniGdGvmy8Z4WGx/exec', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
 
