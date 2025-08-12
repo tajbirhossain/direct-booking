@@ -44,7 +44,6 @@ const Portfolio = () => {
       link: "/case-studies/miamistays"
     },
     {
-      // name: ["BIDAPP", "SDK"],
       name: ["SEARCH", "STAY"],
       tag: ["DIGITAL", "STRATEGY"],
       year: "2020",
@@ -56,18 +55,6 @@ const Portfolio = () => {
       year: "2023",
       link: "/case-studies/frenchriviera"
     },
-    // {
-    //   name: ["INDIEVID", "LABEL"],
-    //   tag: ["IDENTITY,", "WEBSITE"],
-    //   year: "2022",
-    //   link: "https://www.behance.net/gallery/147247443/Indievid-indie-music-label"
-    // },
-    // {
-    //   name: ["SCREEN", "BLASTERS"],
-    //   tag: ["READYMAG", "WEBSITE"],
-    //   year: "2022",
-    //   link: "https://www.behance.net/gallery/176041679/ScreenBlasters-Design-website-made-via-Readymag"
-    // }
   ];
 
 
@@ -519,9 +506,6 @@ const Portfolio = () => {
                   rel="noopener noreferrer"
                   className="block w-full h-full relative"
                 >
-                  {/* <span className="absolute inset-0 flex items-center justify-center text-black font-bold text-xl z-10">
-                    {project.name.join(' ')}
-                  </span> */}
                 </a>
               </div>
             </div>

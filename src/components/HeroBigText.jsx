@@ -13,7 +13,7 @@ const HeroBigText = () => {
     const [timezone, setTimezone] = useState('');
     const [isSmallScreen, setIsSmallScreen] = useState(false);
 
-    
+
     useEffect(() => {
         const checkScreenSize = () => {
             setIsSmallScreen(window.innerWidth <= 650);
@@ -118,11 +118,7 @@ const HeroBigText = () => {
                         <p className='w-[135px] max-[950px]:w-[110px]'>{time || 'Loading time...'}</p>
                         <p className='w-[250px] max-[950px]:w-[200px]'>{location || 'Loading location...'}</p>
                     </div>
-                    {/* <div className='flex items-center gap-28 font-medium px-3 max-[1250px]:gap-16 max-[1050px]:gap-10 max-[1050px]:text-sm max-[950px]:gap-5 max-[950px]:text-xs'>
-                        <p>{t('hero.small')}</p>
-                    </div> */}
                     <div className='flex items-center gap-28 font-medium max-[1250px]:gap-16 max-[1050px]:gap-10 max-[1050px]:text-sm max-[950px]:gap-5 max-[950px]:text-xs'>
-                        {/* <p><a href='https://www.youtube.com/@DirectBookingz'>YOUTUBE</a></p> */}
                         <p><a href='https://www.instagram.com/bookingz01/'>INSTAGRAM</a></p>
                         <p><a href='https://www.facebook.com/people/Direct-Bookingz/61579162591943/'>FACEBOOK</a></p>
                     </div>
@@ -184,12 +180,6 @@ const HeroBigText = () => {
                     </div>
                 </div>
             </div>
-
-            {/* <img src="/images/DIRECT-BOOKINGZ-stroke.svg" alt="" className='w-[1200px] max-w-[1200px] absolute bottom-10 left-1/2 -translate-x-1/2 -z-[1] opacity-10 max-[500px]:w-[800px] hidden max-[650px]:block' /> */}
-            {/* <div>
-                <h2 className='text-5xl'>DIRECT</h2>
-                <h2 className='text-5xl'>BOOKINGZ</h2>
-            </div> */}
         </>
     )
 }

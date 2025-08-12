@@ -317,14 +317,6 @@ const PriceCalculator = () => {
                                     <div className="w-full max-w-[1100px] mx-auto py-10 px-6 flex flex-col gap-y-[3.75em] max-[1150px]:gap-y-[2.5em] max-[1150px]:py-5 max-[900px]:gap-y-[1.5em] max-[900px]:px-3">
                                         <h3 className='text-5xl font-black max-[1350px]:text-4xl max-[1150px]:text-3xl max-[900px]:text-2xl'>{t('cards.second.heading')}</h3>
                                         <div className="flex items-center justify-center flex-wrap gap-y-[1.5em] gap-x-[5em] max-[1350px]:gap-y-[1em] max-[1350px]:gap-x-[3.5em] max-[1150px]:gap-y-[0.75em] max-[1150px]:gap-x-[2em]">
-                                            {/* <img src="images/logos/logo01.webp" loading="lazy" width="51.5" alt="" className='invert' />
-                                            <img src="images/logos/logo02.webp" loading="lazy" alt="" width="77.5" className='invert' />
-                                            <img src="images/logos/logo03.webp" loading="lazy" alt="" width="69.5" className='invert' />
-                                            <img src="images/logos/logo04.webp" loading="lazy" alt="" width="124.5" className='invert' />
-                                            <img src="images/logos/logo05.webp" loading="lazy" alt="" width="180.5" className='invert' />
-                                            <img src="images/logos/logo06.webp" loading="lazy" alt="" width="143" className='invert' />
-                                            <img src="images/logos/logo07.webp" loading="lazy" alt="" width="109.5" className='invert' />
-                                            <img src="images/logos/logo08.webp" loading="lazy" alt="" width="111" className='invert' /> */}
                                             <img src="images/logos/1.png" loading="lazy" width="110" alt="" className='w-[140px] max-[1350px]:w-[110px] max-[1150px]:w-[90px] max-[900px]:w-[70px]' />
                                             <img src="images/logos/2.png" loading="lazy" width="85" alt="" className='w-[115px] max-[1350px]:w-[85px] max-[1150px]:w-[70px] max-[900px]:w-[60px]' />
                                             <img src="images/logos/3.png" loading="lazy" width="160" alt="" className='w-[190px] max-[1350px]:w-[160px] max-[1150px]:w-[140px] max-[900px]:w-[120px]' />
@@ -354,14 +346,7 @@ const PriceCalculator = () => {
 
                         <div ref={addToRefs} className="relative w-[90%] h-[calc(100vh-64px)] flex items-center bg-[#f3f3ef] rounded-2xl col-[1] row-[1] stackedCard max-[500px]:w-[95%] max-[500px]:h-[550px]">
                             <div className="w-full h-full rounded-2xl overflow-hidden relative">
-                                {/* <div className="w-full h-full pt-[120px]">
-                                <h3 className='max-w-[1150px] text-5xl font-black text-black text-center mx-auto mb-20'>
-                                    WE BREAK DOWN THE PROJECT INTO SPRINTS AND EFFICIENTLY ALLOCATE TEAM HOURS WITHIN THE BUDGET
-                                </h3>
-                                <AutoScrollCards />
-                            </div> */}
                                 <img src="/images/customer-review.png" alt="" className='w-full h-full object-cover max-[800px]:object-contain' />
-                                {/* <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-black to-transparent pointer-events-none z-10" /> */}
                                 <div className="size-[183px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-full max-[1150px]:size-[120px]">
                                     <button
                                         onClick={onShowVideoModal}

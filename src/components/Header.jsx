@@ -200,35 +200,35 @@ const Header = () => {
                 <div className="fixed top-[25px] right-[17px] bg-[#FFD73B] rounded-lg duration-500 z-[45] max-[700px]:top-[20px]" style={{ width: showBg ? (typeof window !== 'undefined' && screenWidth > 500 ? "380px" : "285px") : (typeof window !== 'undefined' && screenWidth > 500 ? "132px" : "108px"), height: showBg ? (typeof window !== 'undefined' && screenWidth > 700 ? "430px" : "385px") : (typeof window !== 'undefined' && screenWidth > 500 ? "42px" : "35px"), opacity: btnHovered || showBg ? 1 : 0 }} />
                 <div className="w-[355px] h-[480px] fixed top-20 right-[23px] pr-4 duration-300 max-[500px]:w-[250px] max-[500px]:h-[340px] z-[46]" style={{ opacity: isMenuActive ? 1 : 0, pointerEvents: isMenuActive ? "auto" : "none" }}>
                     <ul className='border-b-[1px] border-b-[#E5C135] pb-5 mb-6'>
-                        <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[0ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "0ms" : "120ms" }} data-hover='Main'>
+                        <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[0ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "0ms" : "120ms" }} data-hover={t('header.menus', { returnObjects: true })[0]}>
                             <a className='relative z-[1]' onClick={handleNav1}>
                                 <span className='w-fit'>
                                     {t('header.menus', { returnObjects: true })[0]}
                                 </span>
                             </a>
                         </li>
-                        <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[30ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "30ms" : "90ms" }} data-hover='Price Calculator'>
+                        <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[30ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "30ms" : "90ms" }} data-hover={t('header.menus', { returnObjects: true })[1]}>
                             <a className='relative z-[1]' onClick={handleNav2}>
                                 <span className='w-fit'>
                                     {t('header.menus', { returnObjects: true })[1]}
                                 </span>
                             </a>
                         </li>
-                        <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[60ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "60ms" : "60ms" }} data-hover='Our Skills'>
+                        <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[60ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "60ms" : "60ms" }} data-hover={t('header.menus', { returnObjects: true })[2]}>
                             <a className='relative z-[1]' onClick={handleNav3}>
                                 <span className='w-fit'>
                                     {t('header.menus', { returnObjects: true })[2]}
                                 </span>
                             </a>
                         </li>
-                        <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[90ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "90ms" : "30ms" }} data-hover='Selected Works'>
+                        <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[90ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "90ms" : "30ms" }} data-hover={t('header.menus', { returnObjects: true })[3]}>
                             <a className='relative z-[1]' onClick={handleNav4}>
                                 <span className='w-fit'>
                                     {t('header.menus', { returnObjects: true })[3]}
                                 </span>
                             </a>
                         </li>
-                        <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[120ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "120ms" : "0ms" }} data-hover='Contact'>
+                        <li className='menuButton w-fit text-[2.15em] font-medium text-start cursor-pointer -tracking-[2px] leading-[1.4] relative duration-150 delay-[120ms] max-[700px]:text-[1.8em] max-[500px]:text-[1.5em]' style={{ top: isMenuActive ? "0px" : "-10px", opacity: isMenuActive ? 1 : 0, transitionDelay: isMenuActive ? "120ms" : "0ms" }} data-hover={t('header.menus', { returnObjects: true })[4]}>
                             <a className='relative z-[1]' onClick={handleNav5}>
                                 <span className='w-fit'>
                                     {t('header.menus', { returnObjects: true })[4]}

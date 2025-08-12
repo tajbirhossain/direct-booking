@@ -14,7 +14,6 @@ const HeroBgVideo = ({ videoRef, videoLoaded, videoUrl }) => {
                 disablePictureInPicture
                 controlsList="nodownload"
             >
-                {/* <source src={videoUrl.webm} type="video/webm" /> */}
                 <source src={videoUrl.mp4} type="video/mp4" />
             </video>
         </div>
