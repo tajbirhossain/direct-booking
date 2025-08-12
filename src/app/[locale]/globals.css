@@ -18,6 +18,13 @@
     --foreground: #ededed;
   }
 } */
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
 
 body {
   background: var(--background);
@@ -197,7 +204,9 @@ body {
   transition: .5s;
   transform: rotateY(0deg);
 }
+
 .bigTextHolder:hover img {
   transform: rotateY(180deg);
 }
+
 /* big text effect ends */

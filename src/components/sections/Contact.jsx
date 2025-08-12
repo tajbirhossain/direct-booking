@@ -71,23 +71,6 @@ const Contact = () => {
     }
     setIsSubmitting(true);
 
-    // try {
-    //   const response = await fetch('https://script.google.com/macros/s/AKfycbz0t6lDYyt0RMADvFj6zhMrWOBmLjr_ZJYxZRk50vOmTMTQJ6MHZBniGdGvmy8Z4WGx/exec', {
-    //     method: 'POST',
-    //     body: JSON.stringify(formData)
-    //   });
-
-    //   if (response.ok) {
-    //     alert("Message sent successfully!");
-    //     setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-    //   } else {
-    //     alert("Something went wrong.");
-    //   }
-    // } catch (error) {
-    //   alert("Error sending message.");
-    // } finally {
-    //   setIsSubmitting(false);
-    // }
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -112,7 +95,7 @@ const Contact = () => {
   return (
     <section id='contact' className='w-full min-h-screen bg-[rgb(6,6,6)] relative flex items-center justify-center py-5'>
       <video ref={bgRef} loop muted autoPlay className='w-full h-full max-h-full object-cover fixed top-0 left-0 pointer-events-none opacity-0'>
-        <source src="/videos/contact-video-sm-2.mp4" type="video/mp4" />
+        <source src="/videos/contact-video-sm-2-2.mp4" type="video/mp4" />
       </video>
 
       <div className="glassCard w-[90%] h-[90%] px-20 py-10 flex flex-col justify-center max-[1350px]:px-14 max-[1350px]:py-8 max-[700px]:w-[95%] max-[700px]:px-8 max-[700px]:py-6 max-[450px]:h-auto max-[450px]:px-5 max-[450px]:py-4">

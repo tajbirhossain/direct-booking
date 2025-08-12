@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 const videos = [
     "/videos/design-and-branding-1-3.mp4",
-    "/videos/design-and-branding-3.mp4",
-    "/videos/design-and-branding-2.mp4",
+    "/videos/design-and-branding-3-2.mp4",
+    "/videos/design-and-branding-2-2.mp4",
 ];
 
 const HeroFirstBgVideo = ({ videoLoaded }) => {

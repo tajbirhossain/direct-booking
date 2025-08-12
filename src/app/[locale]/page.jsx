@@ -21,12 +21,12 @@ const videoUrl = [
   {
     // webm: "/videos/ads-portfolio.webm",
     // mp4: "/videos/ads-portfolio.mp4",
-    mp4: "/videos/marketing-2.mp4"
+    mp4: "/videos/marketing-2-2.mp4"
   },
   {
     // webm: "/videos/web-portfolio.webm",
     // mp4: "/videos/web-portfolio.mp4",
-    mp4: "/videos/web-development-2.mp4"
+    mp4: "/videos/web-development-2-2.mp4"
   },
 ]
 
